@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class EnemyScript : MonoBehaviour
 {
 
-    public float HP = 100;
+    public float maxHP = 100;
+    public float currentHP = 100;
+
     public SimpleHealthBar healthBar;
 
     // Start is called before the first frame update
@@ -14,14 +16,19 @@ public class EnemyScript : MonoBehaviour
     {
        
     }
+    public void DMG(float dmg)
+    {
+        currentHP -= dmg;
+        if (currentHP <= 0)
+        {
+            this.GetComponent<Animator>().Play("Dead");
+        }
+        healthBar.UpdateBar(currentHP, maxHP);
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        //   healthBar.UpdateBar(current, max);
-
-        if (this.GetComponent<EnemyScript>().HP == 0)
-            this.GetComponent<Animator>().Play("Dead");
-
     }
 }

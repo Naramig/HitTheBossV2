@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - head
+  - RightArm
+  - LeftArm
+  - RightLeg
+  - LeftLeg
+  - Body
+  - Armor
   layers:
   - Default
   - TransparentFX

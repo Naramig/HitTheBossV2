@@ -18,6 +18,10 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     //   healthBar.UpdateBar(current, max);
+        //   healthBar.UpdateBar(current, max);
+
+        if (this.GetComponent<EnemyScript>().HP == 0)
+            this.GetComponent<Animator>().Play("Dead");
+
     }
 }

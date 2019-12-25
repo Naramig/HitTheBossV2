@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     float current = 0;
     float max = 0;
     public GameObject enemy;
+
+    float HeadDamage = 25;
     void Start()
     {
 
@@ -34,17 +36,14 @@ public class PlayerController : MonoBehaviour
        // healthBar.UpdateBar(current, max);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //Convert mouse position to raycast
         RaycastHit hit;
-        print(enemy.GetComponent<EnemyScript>().HP);
+        print(enemy.GetComponent<EnemyScript>().HP); 
+
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit))
         {
            
             if (hit.collider.gameObject.tag == "head")
             {
-                enemy.GetComponent<EnemyScript>().HP -= 25;
-
-               print(hit.collider.gameObject.transform.parent.parent.name);
-              if(enemy.GetComponent<EnemyScript>().HP == 0)
-                enemy.GetComponent<Animator>().Play("Dead");
+                enemy.GetComponent<EnemyScript>().HP -= HeadDamage;
             }
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class HitController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float HP;
     public SimpleHealthBar healthBar;
@@ -34,17 +34,17 @@ public class HitController : MonoBehaviour
        // healthBar.UpdateBar(current, max);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //Convert mouse position to raycast
         RaycastHit hit;
-
+        print(enemy.GetComponent<EnemyScript>().HP);
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit))
         {
-            
+           
             if (hit.collider.gameObject.tag == "head")
             {
                 enemy.GetComponent<EnemyScript>().HP -= 25;
 
-              //  print(hit.collider.gameObject.transform.parent.parent.name);
+               print(hit.collider.gameObject.transform.parent.parent.name);
               if(enemy.GetComponent<EnemyScript>().HP == 0)
-                enemy.GetComponent<Animator>().Play("Dying");
+                enemy.GetComponent<Animator>().Play("Dead");
             }
         }
     }

@@ -10,6 +10,7 @@ public class HitController : MonoBehaviour
     public SimpleHealthBar healthBar;
     float current = 0;
     float max = 0;
+    public GameObject enemy;
     void Start()
     {
 
@@ -30,6 +31,21 @@ public class HitController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //healthBar.UpdateBar(current, max);
+       // healthBar.UpdateBar(current, max);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //Convert mouse position to raycast
+        RaycastHit hit;
+
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit))
+        {
+            
+            if (hit.collider.gameObject.tag == "head")
+            {
+                enemy.GetComponent<EnemyScript>().HP -= 25;
+
+              //  print(hit.collider.gameObject.transform.parent.parent.name);
+              if(enemy.GetComponent<EnemyScript>().HP == 0)
+                enemy.GetComponent<Animator>().Play("Dying");
+            }
+        }
     }
 }

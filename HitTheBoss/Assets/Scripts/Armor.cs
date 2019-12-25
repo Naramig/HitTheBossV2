@@ -7,6 +7,6 @@ public class Armor : MonoBehaviour
     
     public void SuitDown()
     {
-        GetComponent<Cloth>().useGravity = true;
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 }

@@ -11,10 +11,14 @@ public class EnemyScript : MonoBehaviour
 
     public SimpleHealthBar healthBar;
 
-    // Start is called before the first frame update
+    public GameObject player;
+    PlayerScript playerScript;
+    bool canHit = true;
+
+    float timeToStartHitting = 6.0f;
     void Start()
     {
-       
+        playerScript = player.GetComponent<PlayerScript>();
     }
     public void DMG(float dmg)
     {
@@ -28,7 +32,20 @@ public class EnemyScript : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (canHit && currentHP > 0)
+        {
+            StartCoroutine(hitThePlayer(timeToStartHitting));
+            canHit = false;
+        }
+    }
+
+    IEnumerator hitThePlayer(float time)
+    {
+        playerScript.DMG(20);
+        this.GetComponent<Animator>().Play("boxing");
+        yield return new WaitForSeconds(time);
+        canHit = true;
     }
 }

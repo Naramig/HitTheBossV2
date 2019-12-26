@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Armor : MonoBehaviour
 {
-    
-    public void SuitDown()
+    public float ArmorHP = 30;
+    public void ArmorDMG(float TakeHpFromArmor)
     {
-        GetComponent<Rigidbody>().isKinematic = false;
+            ArmorHP -= TakeHpFromArmor;
+
+            if (ArmorHP <= 0)
+            {
+                GetComponent<Rigidbody>().isKinematic = false;
+            }                
     }
 }

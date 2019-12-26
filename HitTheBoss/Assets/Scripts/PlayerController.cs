@@ -14,9 +14,8 @@ public class PlayerController : MonoBehaviour
     public float BodyDamage = 10;
     public float ArmDamage = 5;
     public float LegDamage = 5;
-    public GameObject armor;
     EnemyScript enemyScript;
-
+    public float TakeHpFromArmor = 10;
     void Start()
     {
         currentHP = maxHP;
@@ -48,7 +47,7 @@ public class PlayerController : MonoBehaviour
             }
             if (hit.collider.gameObject.tag == "Armor")
             {
-                armor.GetComponent<Armor>().SuitDown();
+                hit.collider.gameObject.GetComponent<Armor>().ArmorDMG(TakeHpFromArmor);
             }
         }
     }

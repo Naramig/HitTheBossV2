@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: n
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":309.2981,"y":18.12673},"zoom":0.7999999,"elements":[{"coroutine":false,"defaultValues":{"button":{"$content":"Left","$type":"Ludiq.MouseButton"},"action":{"$content":"Down","$type":"Ludiq.PressState"}},"position":{"x":-72.0,"y":24.0},"guid":"3fdfad45-8064-4fbc-914d-e0693d4204f1","$version":"A","$type":"Bolt.OnMouseInput","$id":"9"},{"chainable":false,"member":{"name":"AddForce","parameterTypes":["System.Single","System.Single","System.Single","UnityEngine.ForceMode"],"targetType":"UnityEngine.Rigidbody","targetTypeName":"UnityEngine.Rigidbody","$version":"A"},"defaultValues":{"target":null,"%x":{"$content":1.0,"$type":"System.Single"},"%y":{"$content":1.0,"$type":"System.Single"},"%z":{"$content":0.0,"$type":"System.Single"},"%mode":{"$content":"Impulse","$type":"UnityEngine.ForceMode"}},"position":{"x":222.0,"y":87.0},"guid":"5090a665-773d-4c2d-b08c-94ae7783afed","$version":"A","$type":"Bolt.InvokeMember","$id":"11"},{"coroutine":false,"defaultValues":{"button":{"$content":"Right","$type":"Ludiq.MouseButton"},"action":{"$content":"Down","$type":"Ludiq.PressState"}},"position":{"x":-50.0,"y":-185.0},"guid":"2313027f-b726-4f30-af04-fb8ad0d9a4a0","$version":"A","$type":"Bolt.OnMouseInput","$id":"14"},{"chainable":false,"member":{"name":"AddForce","parameterTypes":["System.Single","System.Single","System.Single","UnityEngine.ForceMode"],"targetType":"UnityEngine.Rigidbody","targetTypeName":"UnityEngine.Rigidbody","$version":"A"},"defaultValues":{"target":null,"%x":{"$content":-1.0,"$type":"System.Single"},"%y":{"$content":1.0,"$type":"System.Single"},"%z":{"$content":0.0,"$type":"System.Single"},"%mode":{"$content":"Impulse","$type":"UnityEngine.ForceMode"}},"position":{"x":244.0,"y":-122.0},"guid":"ef8bb6ef-5b36-48f6-9fa4-a87fc913f7f0","$version":"A","$type":"Bolt.InvokeMember","$id":"16"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"11"},"destinationKey":"enter","guid":"78cb9224-b43a-4e1a-b343-1fa28cbf1a7d","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"trigger","destinationUnit":{"$ref":"16"},"destinationKey":"enter","guid":"722bd09a-9325-43b0-a0c1-0a61859ba1f7","$type":"Bolt.ControlConnection"}],"$version":"A"}}'
+    _objectReferences: []

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: EnemyFlow
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-38.23909,"y":-37.76231},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-393.0,"y":-105.0},"guid":"c2d3f2d4-79c1-4605-a419-d234b2d0d43f","$version":"A","$type":"Bolt.Update","$id":"9"},{"chainable":false,"member":{"name":"GetMouseButtonDown","parameterTypes":["System.Int32"],"targetType":"UnityEngine.Input","targetTypeName":"UnityEngine.Input","$version":"A"},"defaultValues":{"%button":{"$content":0,"$type":"System.Int32"}},"position":{"x":-246.0,"y":-87.0},"guid":"d525b7e7-e609-47dd-a73c-d1b550e18922","$version":"A","$type":"Bolt.InvokeMember","$id":"11"},{"defaultValues":{},"position":{"x":6.0,"y":-107.0},"guid":"96dd29f5-82c3-41c0-bb81-e256929e593b","$version":"A","$type":"Bolt.Branch","$id":"14"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"11"},"destinationKey":"enter","guid":"e416258e-8612-46d2-99e2-d7c301940ae3","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"11"},"sourceKey":"exit","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"a32fb04a-f44e-4cd0-9f3c-14f2c360e03c","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"11"},"sourceKey":"result","destinationUnit":{"$ref":"14"},"destinationKey":"condition","guid":"abaeaefe-6b7e-4e56-9aa3-6349642037d3","$type":"Bolt.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []

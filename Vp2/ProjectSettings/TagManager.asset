@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Head
   - Body
+  - LeftGrease
+  - RightGrease
+  - RightLegguard
+  - LeftLegguard
+  - Helmet
+  - Breastplate
   layers:
   - Default
   - TransparentFX

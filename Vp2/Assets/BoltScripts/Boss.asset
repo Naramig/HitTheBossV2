@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-53.80771,"y":-11.40019},"zoom":1.0,"elements":[],"$version":"A"}}'
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-714.3097,"y":110.8325},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-1062.0,"y":-195.0},"guid":"d344c18e-21cd-4058-8f23-e3b832cfff7a","$version":"A","$type":"Bolt.Update"}],"$version":"A"}}'
     _objectReferences: []

@@ -12,6 +12,14 @@ TagManager:
   - LeftLegguard
   - Helmet
   - Breastplate
+  - RightArm
+  - LeftArm
+  - LeftUpLeg
+  - RightUpLeg
+  - LeftDownLeg
+  - RightDownLeg
+  - LeftArmArmor
+  - RightArmArmor
   layers:
   - Default
   - TransparentFX

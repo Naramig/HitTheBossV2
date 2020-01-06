@@ -954,7 +954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"Picked Enemy","value":null,"$version":"A"},{"name":"Boss","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BossHp","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Helmet","value":{"$content":1,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BreastPlate","value":{"$content":2,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"HelmetHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"BreastplateHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"BossMaxHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"HPBar","value":{"$content":3,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"AttackBar","value":{"$content":4,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightLegguard","value":{"$content":5,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightLegguardHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftGreaseHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftGrease","value":{"$content":6,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightGreaseHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"RightGrease","value":{"$content":7,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LeftLegguardHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftLegguard","value":{"$content":8,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightArmArmor","value":{"$content":9,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightArmArmorHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftArmArmor","value":{"$content":10,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LeftArmArmorHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"collection":{"$content":[{"name":"Picked Enemy","value":null,"$version":"A"},{"name":"Boss","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BossHp","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Helmet","value":{"$content":1,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BreastPlate","value":{"$content":2,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"HelmetHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"BreastplateHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"BossMaxHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"HPBar","value":{"$content":3,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"AttackBar","value":{"$content":4,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightLegguard","value":{"$content":5,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightLegguardHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftGreaseHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftGrease","value":{"$content":6,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightGreaseHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"RightGrease","value":{"$content":7,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LeftLegguardHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftLegguard","value":{"$content":8,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightArmArmor","value":{"$content":9,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightArmArmorHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftArmArmor","value":{"$content":10,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LeftArmArmorHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"FloatingText","value":{"$content":11,"$type":"UnityEngine.Object"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1269329919}
     - {fileID: 2935535244827355693}
@@ -967,6 +967,7 @@ MonoBehaviour:
     - {fileID: 6692476993173099790}
     - {fileID: 4988655972780011722}
     - {fileID: 1356277490}
+    - {fileID: 1739377859452008845, guid: d7544d643a915eb4695a8674812431c9, type: 3}
 --- !u!4 &1332223644
 Transform:
   m_ObjectHideFlags: 0
@@ -1874,6 +1875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 13.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195222525786873587, guid: c8b6a6c22d70fb043beabfc339cc4a14,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b6a6c22d70fb043beabfc339cc4a14, type: 3}

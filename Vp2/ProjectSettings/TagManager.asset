@@ -20,6 +20,9 @@ TagManager:
   - RightDownLeg
   - LeftArmArmor
   - RightArmArmor
+  - LeftForeArm
+  - RightForeArm
+  - CounterAttackTrigger
   layers:
   - Default
   - TransparentFX
@@ -56,4 +59,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: gui
+    uniqueID: 3266113199
+    locked: 0
+  - name: New Layer
+    uniqueID: 1611757447
     locked: 0

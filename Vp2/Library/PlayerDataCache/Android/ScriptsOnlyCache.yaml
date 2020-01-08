@@ -9,20 +9,16 @@ ScriptsOnlyBuild:
     Bolt.Flow.Runtime.dll:
     - Bolt.FlowMachine
     - Bolt.FlowMacro
-    Ludiq.Core.Editor.dll:
-    - Ludiq.LudiqScriptableObjectEditor
     Ludiq.Core.Runtime.dll:
     - Ludiq.DictionaryAsset
-    Ludiq.Graphs.Editor.dll:
-    - Ludiq.GraphWindow
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -57,10 +53,6 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -724,4 +716,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Nikolai/Desktop/HTB.apk
+  playerPath: E:/MAwork/HitTheBossV2/Vp2/Build/Vp2.apk

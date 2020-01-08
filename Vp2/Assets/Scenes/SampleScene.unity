@@ -775,8 +775,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 1269329923, guid: 365054f243c986a4eb9fff08c6c2503e, type: 3}
+      propertyPath: _data._objectReferences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269329923, guid: 365054f243c986a4eb9fff08c6c2503e, type: 3}
       propertyPath: _data._json
       value: '{"declarations":{"collection":{"$content":[{"name":"Boss","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BossMaxHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"BossCurrHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"HealthBar","value":{"$content":1,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"AttackBar","value":{"$content":2,"$type":"UnityEngine.Object"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269329923, guid: 365054f243c986a4eb9fff08c6c2503e, type: 3}
+      propertyPath: _data._objectReferences.Array.data[3]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 365054f243c986a4eb9fff08c6c2503e, type: 3}

@@ -62,12 +62,16 @@ MonoBehaviour:
 =======
     width: 1536
     height: 781
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   m_MinSize: {x: 950, y: 522}
 >>>>>>> master
 =======
   m_MinSize: {x: 950, y: 300}
 >>>>>>> master
+=======
+  m_MinSize: {x: 950, y: 544}
+>>>>>>> Stashed changes
   m_MaxSize: {x: 10000, y: 10000}
 =======
     y: 30
@@ -100,6 +104,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+<<<<<<< Updated upstream
   m_LastLoadedLayoutName: VisualProgramming
 =======
     width: 277
@@ -111,6 +116,9 @@ MonoBehaviour:
   - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
+>>>>>>> Stashed changes
+=======
+  m_LastLoadedLayoutName: 
 >>>>>>> Stashed changes
 --- !u!114 &4
 MonoBehaviour:
@@ -175,9 +183,10 @@ MonoBehaviour:
 =======
     width: 1536
     height: 731
-  m_MinSize: {x: 879, y: 494}
-  m_MaxSize: {x: 16004, y: 14044}
+  m_MinSize: {x: 887, y: 494}
+  m_MaxSize: {x: 16012, y: 14044}
   vertical: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   controlID: 37187
 >>>>>>> master
@@ -201,6 +210,9 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 >>>>>>> Stashed changes
+=======
+  controlID: 158
+>>>>>>> Stashed changes
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +235,10 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 731
-  m_MinSize: {x: 879, y: 494}
-  m_MaxSize: {x: 16004, y: 14044}
+  m_MinSize: {x: 887, y: 494}
+  m_MaxSize: {x: 16012, y: 14044}
   vertical: 1
-  controlID: 69734
+  controlID: 159
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -261,10 +273,10 @@ MonoBehaviour:
 =======
     width: 1536
     height: 459
-  m_MinSize: {x: 879, y: 222}
-  m_MaxSize: {x: 16004, y: 4022}
+  m_MinSize: {x: 887, y: 222}
+  m_MaxSize: {x: 16012, y: 4022}
   vertical: 0
-  controlID: 70185
+  controlID: 109
 --- !u!114 &8
 >>>>>>> master
 MonoBehaviour:
@@ -366,8 +378,8 @@ MonoBehaviour:
 =======
     width: 204
     height: 459
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 17}
 >>>>>>> master
   m_Panes:
@@ -399,8 +411,8 @@ MonoBehaviour:
     y: 0
     width: 783
     height: 459
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -462,8 +474,8 @@ MonoBehaviour:
     y: 0
     width: 282
     height: 459
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -508,7 +520,7 @@ MonoBehaviour:
   m_MinSize: {x: 334, y: 272}
   m_MaxSize: {x: 14004, y: 10022}
   vertical: 0
-  controlID: 69735
+  controlID: 160
 --- !u!114 &13
 =======
   m_EditorHideFlags: 1
@@ -753,7 +765,7 @@ MonoBehaviour:
     height: 253
   m_ViewDataDictionary: {fileID: 0}
   _data:
-    _json: '{"locked":false,"isActive":true,"referenceData":{"rootObjectInstanceID":11758,"parentElementGuids":[]},"sidebars":{"left":{"size":335.0,"scroll":{"x":0.0,"y":0.0}},"right":{"size":300.0,"scroll":{"x":0.0,"y":0.0}},"panels":[{"height":200.0,"anchor":"Left","order":0,"controlHint":{"$content":"Ludiq.GraphInspectorPanel","$type":"System.RuntimeType"},"scroll":{"x":0.0,"y":0.0}},{"height":200.0,"anchor":"Left","order":0,"controlHint":{"$content":"Bolt.VariablesPanel","$type":"System.RuntimeType"},"scroll":{"x":0.0,"y":0.0}}]},"reliablePosition":{"xMin":666.4,"yMin":532.0,"xMax":1534.4,"yMax":785.0},"m_MinSize":{"x":100.0,"y":100.0},"m_MaxSize":{"x":4000.0,"y":4000.0},"m_TitleContent":{"m_Text":"Flow
+    _json: '{"locked":false,"isActive":true,"referenceData":{"rootObjectInstanceID":13202,"parentElementGuids":[]},"sidebars":{"left":{"size":335.0,"scroll":{"x":0.0,"y":0.0}},"right":{"size":300.0,"scroll":{"x":0.0,"y":0.0}},"panels":[{"height":200.0,"anchor":"Left","order":0,"controlHint":{"$content":"Ludiq.GraphInspectorPanel","$type":"System.RuntimeType"},"scroll":{"x":0.0,"y":0.0}},{"height":200.0,"anchor":"Left","order":0,"controlHint":{"$content":"Bolt.VariablesPanel","$type":"System.RuntimeType"},"scroll":{"x":0.0,"y":0.0}}]},"reliablePosition":{"xMin":666.4,"yMin":532.0,"xMax":1534.4,"yMax":785.0},"m_MinSize":{"x":100.0,"y":100.0},"m_MaxSize":{"x":4000.0,"y":4000.0},"m_TitleContent":{"m_Text":"Flow
       Graph","m_Image":null,"m_Tooltip":""},"m_Pos":{"xMin":666.4,"yMin":532.0,"xMax":1534.4,"yMax":785.0},"m_ViewDataDictionary":null}'
     _objectReferences: []
 --- !u!114 &16
@@ -810,8 +822,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 92330000
       m_LastClickedID: 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -824,6 +837,9 @@ MonoBehaviour:
 >>>>>>> master
 =======
       m_ExpandedIDs: 72faffff
+>>>>>>> Stashed changes
+=======
+      m_ExpandedIDs: 78faffff
 >>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -959,7 +975,7 @@ MonoBehaviour:
 =======
     m_Target: {x: 0.025318863, y: 0.9703802, z: -0.20987277, w: 0.117005244}
     speed: 2
-    m_Value: {x: 0.025318667, y: 0.9703727, z: -0.20987114, w: 0.117004335}
+    m_Value: {x: 0.025318865, y: 0.9703802, z: -0.20987278, w: 0.11700525}
   m_Size:
     m_Target: 1.7385638
     speed: 2
@@ -1481,10 +1497,16 @@ MonoBehaviour:
 >>>>>>> master
 =======
     scrollPos: {x: 0, y: 108}
+<<<<<<< Updated upstream
     m_SelectedIDs: 722f0000
     m_LastClickedID: 12146
     m_ExpandedIDs: 00000000042e0000ac30000000ca9a3b
 >>>>>>> master
+=======
+    m_SelectedIDs: fc2e0000
+    m_LastClickedID: 12028
+    m_ExpandedIDs: 00000000782d00004030000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1512,6 +1534,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_ExpandedIDs: 00000000782d00001c300000
@@ -1521,6 +1544,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000042e0000ac30000000ca9a3b
 >>>>>>> master
+=======
+    m_ExpandedIDs: 00000000782d000040300000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1547,7 +1573,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

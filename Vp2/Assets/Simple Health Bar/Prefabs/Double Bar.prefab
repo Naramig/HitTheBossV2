@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 11433706}
   - component: {fileID: 11450860}
   m_Layer: 5
-  m_Name: Status Fill 00
+  m_Name: PlayerHpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 11496976}
   - component: {fileID: 11426762}
   m_Layer: 5
-  m_Name: Status Fill 01
+  m_Name: PlayerAttackBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

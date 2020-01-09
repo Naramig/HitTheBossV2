@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45139945, g: 0.5008959, b: 0.5723378, a: 1}
+  m_IndirectSpecularColor: {r: 0.45139933, g: 0.5008961, b: 0.57233715, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1012,6 +1012,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss_bez_kostei (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842054290, guid: 365054f243c986a4eb9fff08c6c2503e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6601427463612520450, guid: 365054f243c986a4eb9fff08c6c2503e,
         type: 3}

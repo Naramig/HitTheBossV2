@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45139933, g: 0.5008961, b: 0.57233715, a: 1}
+  m_IndirectSpecularColor: {r: 0.45139945, g: 0.5008959, b: 0.5723378, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"Picked Enemy","value":null,"$version":"A"},{"name":"Boss","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BossHp","value":{"$content":20.0,"$type":"System.Single"},"$version":"A"},{"name":"Helmet","value":{"$content":1,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BreastPlate","value":{"$content":2,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"HelmetHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"BreastplateHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"HPBar","value":{"$content":3,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"AttackBar","value":{"$content":4,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"CurrentAttack","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"},{"name":"CurrentPlayerHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"MaxPlayerHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"FloatingText","value":{"$content":5,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"GaneOverText","value":{"$content":6,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightGreaseHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftArmArmorHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftLegguardHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftGreaseHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"RightArmArmorHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"RightLegguardHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftLegguard","value":{"$content":7,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightGrease","value":{"$content":8,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LeftArmArmor","value":{"$content":9,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightArmArmor","value":{"$content":10,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LeftGrease","value":{"$content":11,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightLegguard","value":{"$content":12,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"EnemyAttacked","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"RightHand","value":{"$content":13,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"MainCamera","value":{"$content":14,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"Timer","value":{"$content":true,"$type":"System.Boolean"},"$version":"A"},{"name":"BossMaxHP","value":{"$content":30.0,"$type":"System.Single"},"$version":"A"},{"name":"PlayerHPBar","value":{"$content":15,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"PlayerAttackBar","value":{"$content":16,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"PlayerAttacked","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"AttackValue","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"collection":{"$content":[{"name":"Picked Enemy","value":null,"$version":"A"},{"name":"Boss","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BossHp","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"Helmet","value":{"$content":1,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"BreastPlate","value":{"$content":2,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"HelmetHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"BreastplateHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"HPBar","value":{"$content":3,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"AttackBar","value":{"$content":4,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"CurrentAttack","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"},{"name":"CurrentPlayerHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"MaxPlayerHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"FloatingText","value":{"$content":5,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"GaneOverText","value":{"$content":6,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightGreaseHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftArmArmorHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftLegguardHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftGreaseHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"RightArmArmorHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"RightLegguardHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"LeftLegguard","value":{"$content":7,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightGrease","value":{"$content":8,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LeftArmArmor","value":{"$content":9,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightArmArmor","value":{"$content":10,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"LeftGrease","value":{"$content":11,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"RightLegguard","value":{"$content":12,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"EnemyAttacked","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"RightHand","value":{"$content":13,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"MainCamera","value":{"$content":14,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"Timer","value":{"$content":true,"$type":"System.Boolean"},"$version":"A"},{"name":"BossMaxHP","value":{"$content":100.0,"$type":"System.Single"},"$version":"A"},{"name":"PlayerHPBar","value":{"$content":15,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"PlayerAttackBar","value":{"$content":16,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"PlayerAttacked","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"},{"name":"AttackValue","value":{"$content":0.0,"$type":"System.Single"},"$version":"A"},{"name":"RefreshButton","value":{"$content":17,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"CounterAttacked","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1269329919}
     - {fileID: 2935535244827355693}
@@ -702,6 +702,7 @@ MonoBehaviour:
     - {fileID: 963194225}
     - {fileID: 1764521578}
     - {fileID: 1479602689}
+    - {fileID: 1617977539}
 --- !u!4 &1332223644
 Transform:
   m_ObjectHideFlags: 0
@@ -722,6 +723,34 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5101425911767195376}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1617977539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8887304996536960881, guid: c9dbb1669288ca14daa7defdf5c29022,
+    type: 3}
+  m_PrefabInstance: {fileID: 5101425911767195376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1717544982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5101425912400297565, guid: c9dbb1669288ca14daa7defdf5c29022,
+    type: 3}
+  m_PrefabInstance: {fileID: 5101425911767195376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1717544989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717544982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -57143145, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 16d2f29b7b5725e4c96eed5b0748ea55, type: 2}
 --- !u!1 &1742188637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2537159767505076395, guid: 365054f243c986a4eb9fff08c6c2503e,
@@ -888,17 +917,17 @@ PrefabInstance:
     - target: {fileID: 6601427463612520450, guid: 365054f243c986a4eb9fff08c6c2503e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6601427463612520450, guid: 365054f243c986a4eb9fff08c6c2503e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 6601427463612520450, guid: 365054f243c986a4eb9fff08c6c2503e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.94
       objectReference: {fileID: 0}
     - target: {fileID: 6601427463612520450, guid: 365054f243c986a4eb9fff08c6c2503e,
         type: 3}
@@ -2611,6 +2640,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887304996536960882, guid: c9dbb1669288ca14daa7defdf5c29022,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 364
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887304996536960882, guid: c9dbb1669288ca14daa7defdf5c29022,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 472
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101425912205089973, guid: c9dbb1669288ca14daa7defdf5c29022,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 359
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101425912205089973, guid: c9dbb1669288ca14daa7defdf5c29022,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101425912205089971, guid: c9dbb1669288ca14daa7defdf5c29022,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101425912205089971, guid: c9dbb1669288ca14daa7defdf5c29022,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9dbb1669288ca14daa7defdf5c29022, type: 3}

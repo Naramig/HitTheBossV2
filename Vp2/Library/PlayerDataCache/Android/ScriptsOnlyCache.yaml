@@ -15,15 +15,17 @@ ScriptsOnlyBuild:
     - Ludiq.GraphWindow
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/AScene.unity:
+    Assets/Scenes/NScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -88,6 +90,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10464}
     - Class: 114
       Script: {instanceID: 10466}
+    - Class: 114
+      Script: {instanceID: 10668}
     - Class: 114
       Script: {instanceID: 11142}
     - Class: 114
@@ -715,5 +719,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/Scenes/AScene.unity
+  - Assets/Scenes/NScene.unity
   playerPath: C:/Users/Nikolai/Documents/Neo/test/hit/Vp2/HittheBoss.apk

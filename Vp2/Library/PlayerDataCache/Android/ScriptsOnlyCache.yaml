@@ -34,6 +34,14 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.LWRP.ForwardRendererData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -119,23 +127,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11000}
     - Class: 114
+      Script: {instanceID: 11288}
+    - Class: 114
       Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 11292}
+      Script: {instanceID: 11496}
     - Class: 114
-      Script: {instanceID: 11498}
+      Script: {instanceID: 11644}
     - Class: 114
-      Script: {instanceID: 11646}
+      Script: {instanceID: 11690}
     - Class: 114
-      Script: {instanceID: 11694}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12472}
+      Script: {instanceID: 12918}
     - Class: 114
-      Script: {instanceID: 12926}
+      Script: {instanceID: 13050}
     - Class: 114
-      Script: {instanceID: 13058}
-    - Class: 114
-      Script: {instanceID: 13120}
+      Script: {instanceID: 13112}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -519,12 +527,6 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 390088f0181e3bc83c883614bf07d674
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: SimpleHealthBar_SpaceshipExample
-    className: AsteroidController
-  - hash:
-      serializedVersion: 2
       Hash: 61b9d9b6f4b6a222dfea8b131b3d3227
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -621,12 +623,6 @@ ScriptsOnlyBuild:
     className: VolumeProfile
   - hash:
       serializedVersion: 2
-      Hash: f406ebcbf42de1bd447d141184730003
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: SimpleHealthBar_SpaceshipExample
-    className: PlayerController
-  - hash:
-      serializedVersion: 2
       Hash: 516824a435828eadd660ef2f1658a48e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -637,12 +633,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
-  - hash:
-      serializedVersion: 2
-      Hash: 3f6497af7f33bfe55504c5c173f9c404
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: SimpleHealthBar_SpaceshipExample
-    className: HealthPickupController
   - hash:
       serializedVersion: 2
       Hash: f050e4ebd311386367bb1906f9218b01
@@ -703,12 +693,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
-  - hash:
-      serializedVersion: 2
-      Hash: 062a1574b487513bfe53b326958cdc43
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: SimpleHealthBar_SpaceshipExample
-    className: PlayerHealth
   - hash:
       serializedVersion: 2
       Hash: ed85181092d6a9281f5c4470352f96a1
@@ -939,12 +923,6 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 39abe8ae2d89af2dc09cf3c0bee60d97
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: SimpleHealthBar_SpaceshipExample
-    className: GameManager
-  - hash:
-      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -976,4 +954,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/NScene.unity
-  playerPath: E:/MAwork/HitTheBossV2/Vp2/Build/Vp2.apk
+  playerPath: E:/MAwork/HitTheBossV2/Vp2/Build/Vp22.apk

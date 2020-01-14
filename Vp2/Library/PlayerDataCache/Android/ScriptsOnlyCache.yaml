@@ -55,7 +55,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/NScene.unity:
+    Assets/Scenes/AScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -103,47 +103,47 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9876}
-    - Class: 114
       Script: {instanceID: 9906}
     - Class: 114
-      Script: {instanceID: 9930}
+      Script: {instanceID: 9936}
     - Class: 114
-      Script: {instanceID: 10210}
+      Script: {instanceID: 9960}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10240}
     - Class: 114
-      Script: {instanceID: 10326}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 10486}
+      Script: {instanceID: 10356}
     - Class: 114
-      Script: {instanceID: 10604}
-    - Class: 114
-      Script: {instanceID: 10608}
-    - Class: 114
-      Script: {instanceID: 10610}
+      Script: {instanceID: 10516}
     - Class: 114
       Script: {instanceID: 10634}
     - Class: 114
-      Script: {instanceID: 11000}
+      Script: {instanceID: 10638}
     - Class: 114
-      Script: {instanceID: 11288}
+      Script: {instanceID: 10640}
     - Class: 114
-      Script: {instanceID: 11290}
+      Script: {instanceID: 10664}
     - Class: 114
-      Script: {instanceID: 11496}
+      Script: {instanceID: 11030}
     - Class: 114
-      Script: {instanceID: 11644}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11690}
+      Script: {instanceID: 11320}
     - Class: 114
-      Script: {instanceID: 12464}
+      Script: {instanceID: 11526}
     - Class: 114
-      Script: {instanceID: 12918}
+      Script: {instanceID: 11674}
     - Class: 114
-      Script: {instanceID: 13050}
+      Script: {instanceID: 11720}
     - Class: 114
-      Script: {instanceID: 13112}
+      Script: {instanceID: 12494}
+    - Class: 114
+      Script: {instanceID: 12948}
+    - Class: 114
+      Script: {instanceID: 13080}
+    - Class: 114
+      Script: {instanceID: 13142}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -169,6 +169,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 258
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -953,5 +959,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/Scenes/NScene.unity
-  playerPath: E:/MAwork/HitTheBossV2/Vp2/Build/Vp22.apk
+  - Assets/Scenes/AScene.unity
+  playerPath: C:/Users/Nikolai/Documents/Neo/test/hit/Vp2/VP2.apk

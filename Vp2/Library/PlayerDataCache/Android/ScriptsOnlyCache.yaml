@@ -37,11 +37,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -103,47 +100,47 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 9876}
+    - Class: 114
       Script: {instanceID: 9906}
     - Class: 114
-      Script: {instanceID: 9936}
+      Script: {instanceID: 9930}
     - Class: 114
-      Script: {instanceID: 9960}
+      Script: {instanceID: 10210}
     - Class: 114
-      Script: {instanceID: 10240}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 10318}
+      Script: {instanceID: 10326}
     - Class: 114
-      Script: {instanceID: 10356}
+      Script: {instanceID: 10486}
     - Class: 114
-      Script: {instanceID: 10516}
+      Script: {instanceID: 10604}
+    - Class: 114
+      Script: {instanceID: 10608}
+    - Class: 114
+      Script: {instanceID: 10610}
     - Class: 114
       Script: {instanceID: 10634}
     - Class: 114
-      Script: {instanceID: 10638}
+      Script: {instanceID: 11000}
     - Class: 114
-      Script: {instanceID: 10640}
+      Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 10664}
+      Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 11030}
+      Script: {instanceID: 11496}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11644}
     - Class: 114
-      Script: {instanceID: 11320}
+      Script: {instanceID: 11690}
     - Class: 114
-      Script: {instanceID: 11526}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 11674}
+      Script: {instanceID: 12918}
     - Class: 114
-      Script: {instanceID: 11720}
+      Script: {instanceID: 13050}
     - Class: 114
-      Script: {instanceID: 12494}
-    - Class: 114
-      Script: {instanceID: 12948}
-    - Class: 114
-      Script: {instanceID: 13080}
-    - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 13112}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -960,4 +957,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/AScene.unity
-  playerPath: C:/Users/Nikolai/Documents/Neo/test/hit/Vp2/VP2.apk
+  playerPath: C:/Users/Nikolai/Documents/Neo/test/hit/Vp2/HitTheBoss.apk

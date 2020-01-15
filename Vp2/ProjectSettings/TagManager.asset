@@ -23,6 +23,7 @@ TagManager:
   - LeftForeArm
   - RightForeArm
   - CounterAttackTrigger
+  - MapTrigger
   layers:
   - Default
   - TransparentFX

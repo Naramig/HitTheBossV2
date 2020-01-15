@@ -30,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8622650900177808251}
-  m_LocalRotation: {x: -0, y: 0.9997338, z: -0, w: 0.023074059}
-  m_LocalPosition: {x: -0.396, y: 1.77, z: -0.01}
+  m_LocalRotation: {x: -0.0013200379, y: 0.9980961, z: 0.057200275, w: 0.023033539}
+  m_LocalPosition: {x: -0.396, y: 1.21, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8622650901149353993}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 177.356, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.56, y: 177.356, z: 0}
 --- !u!20 &8622650900177808249
 Camera:
   m_ObjectHideFlags: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"spearPosition","value":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"$version":"A"},{"name":"SpearStartPosition","value":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"$version":"A"},{"name":"CanTap","value":{"$content":true,"$type":"System.Boolean"},"$version":"A"},{"name":"CanMove","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"collection":{"$content":[{"name":"spearPosition","value":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"$version":"A"},{"name":"SpearStartPosition","value":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"},"$version":"A"},{"name":"CanTap","value":{"$content":true,"$type":"System.Boolean"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!114 &8622650901149353995
 MonoBehaviour:
@@ -445,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 3988852685151101402, guid: 65e4768e76e2a72478c296d035ecb3b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.411
+      value: 1.04
       objectReference: {fileID: 0}
     - target: {fileID: 3988852685151101402, guid: 65e4768e76e2a72478c296d035ecb3b0,
         type: 3}

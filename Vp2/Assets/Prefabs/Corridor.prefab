@@ -103,7 +103,8 @@ GameObject:
   - component: {fileID: 6976052179015653264}
   - component: {fileID: 6976052179015653278}
   - component: {fileID: 6976052179015653279}
-  m_Layer: 9
+  - component: {fileID: 8638119337402794627}
+  m_Layer: 11
   m_Name: Corridor_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,6 +172,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8638119337402794627
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976052179015653265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -121109773075660010, guid: 7685daf2cb7ecd5428346d9cb5e55d1b, type: 3}
 --- !u!1 &6976052180001513360
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +403,8 @@ GameObject:
   - component: {fileID: 6976052180447470698}
   - component: {fileID: 6976052180447470696}
   - component: {fileID: 6976052180447470697}
-  m_Layer: 9
+  - component: {fileID: 5622618744193055283}
+  m_Layer: 11
   m_Name: Corridor_wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,3 +472,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5622618744193055283
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976052180447470699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -121109773075660010, guid: 7685daf2cb7ecd5428346d9cb5e55d1b, type: 3}

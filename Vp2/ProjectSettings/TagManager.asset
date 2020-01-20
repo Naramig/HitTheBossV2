@@ -38,8 +38,8 @@ TagManager:
   - Floor
   - Obstacle
   - Player
-  - 
-  - 
+  - EnemyWomb
+  - PlayerAttackTrigger
   - 
   - 
   - 

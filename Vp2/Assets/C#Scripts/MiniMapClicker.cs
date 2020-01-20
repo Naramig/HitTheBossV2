@@ -4,17 +4,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MiniMapClicker : MonoBehaviour, IPointerClickHandler
+public class MiniMapClicker : MonoBehaviour
 {
     //Drag Orthographic top down camera here
     public Camera miniMapCam;
     public RaycastHit miniMapHit;
+    public GameObject target;
 
-
-    public void OnPointerClick(PointerEventData eventData)
+    public void MinimapClick(PointerEventData eventData)
     {
 
         Vector2 localCursor = new Vector2(0, 0);
+        target = null;
 
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RawImage>().rectTransform, eventData.pressPosition, eventData.pressEventCamera, out localCursor))
         {
@@ -37,6 +38,7 @@ public class MiniMapClicker : MonoBehaviour, IPointerClickHandler
         }
 
     }
+    
 
     private void CastMiniMapRayToWorld(Vector2 localCursor)
     {
@@ -46,7 +48,7 @@ public class MiniMapClicker : MonoBehaviour, IPointerClickHandler
         if (Physics.Raycast(miniMapRay, out miniMapHit, Mathf.Infinity))
         {
             Debug.Log("miniMapHit: " + miniMapHit.collider.gameObject);
-           
+            target = miniMapHit.collider.gameObject;
 
         }
 

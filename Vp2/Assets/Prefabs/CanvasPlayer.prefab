@@ -629,10 +629,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"RefreshButton","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"MapPanel","value":{"$content":1,"$type":"UnityEngine.Object"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"collection":{"$content":[{"name":"RefreshButton","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 3773326334906258658}
-    - {fileID: 0}
 --- !u!114 &3773326335679761298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,6 +648,20 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 16d2f29b7b5725e4c96eed5b0748ea55, type: 2}
+--- !u!114 &117392854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4990767180960849031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0be4d7843984f789449b96419165ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniMapCam: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &8256905275993905168
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8256905275993905169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -923,6 +936,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8819d527f4ef443a68889e19b767d64d, type: 3}
+--- !u!1 &4990767180960849031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7576051873063193121, guid: 8819d527f4ef443a68889e19b767d64d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3197924376301541030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1208956134690610371 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4370282142119709285, guid: 8819d527f4ef443a68889e19b767d64d,

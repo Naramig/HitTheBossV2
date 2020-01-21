@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     AIPath aIPath;
     AIDestinationSetter destinationSetter;
     Spear spear;
-    
+    Ray ray;
     Armor armor;
     bool canTap = true;
     public bool attacked;
@@ -26,9 +26,12 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        armor = GetComponent<Armor>();
+        spear = GetComponentInChildren<Spear>();
+
+        armor = FindObjectOfType<Armor>();
         aIPath = GetComponent<AIPath>();
         aIPath.canMove = false;
+        Debug.Log(cam.name);
     }
 
     void AttackBar()
@@ -51,28 +54,34 @@ public class Player : MonoBehaviour
             attackMod = 0;
         }
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(ray);
+    }
 
     void Hit()
     {
 
-            Debug.Log(canTap);
-            if (canTap)
+        if (canTap)
             {
                 canTapTimer -= Time.deltaTime;
                 if (Input.GetMouseButtonDown(0))
                 {
-                Debug.Log("tap");
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                
+                ray = cam.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 Physics.Raycast(ray, out hit);
+                Debug.Log(canTapTimer);
 
-                    if (hit.collider != null)
-                    {
-                    //spear.speared = false;
-                       hit.point = mousePos;
-                       armor.DMG();
-                       armor.FloatingText();
-                    Debug.Log(armor.dmgMod);
+                if (hit.collider != null)
+                {
+                
+                mousePos = hit.point;
+                spear.speared = true;
+                Debug.Log(mousePos);
+                //armor.DMG();
+                //armor.FloatingText();
+
 
                 }
             }

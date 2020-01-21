@@ -7,23 +7,29 @@ public class BossAttack : MonoBehaviour
     public GameObject RightHand;
     public GameObject LeftFoot;
 
+
+    
     public GameObject Sphere;
 
-    string[] animations = { "RightHand1", "RightHand2", "rightLeg" }; //All Boss animations
+
+    string[] animations = { "RightHand", "RightHand2", "rightLeg" }; //All Boss animations
     public void Hit()
     {
-        int rnd = Random.Range(0, animations.Length - 1);
+        GameObject temp = new GameObject() ;
+        int rnd = 2;
+        //int rnd = Random.Range(0, animations.Length);
         Vector3 positionOfSphere = new Vector3(0, 0, 0);
 
         //Get position for sphere
         if (rnd >= 0 && rnd <= 1)
-            positionOfSphere = RightHand.transform.position;
+            temp = RightHand;
         else if (rnd >= 2 && rnd <= 2)
-            positionOfSphere = LeftFoot.transform.position;
+            temp = LeftFoot;
 
-        GameObject NewSphere = Instantiate(Sphere, positionOfSphere, Quaternion.identity);
+        GameObject NewSphere = Instantiate(Sphere, temp.transform.position, Quaternion.identity);
+        NewSphere.transform.SetParent(temp.transform);
         GetComponent<Animator>().Play(animations[rnd]);
-        StartCoroutine(DeleteAfterSomeTime(0.7f, NewSphere));
+        StartCoroutine(DeleteAfterSomeTime(1.0f, NewSphere));
     }
 
     IEnumerator DeleteAfterSomeTime(float time, GameObject NewSphere)

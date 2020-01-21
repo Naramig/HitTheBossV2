@@ -7,11 +7,11 @@ public class Boss : MonoBehaviour
 {
     float BossMaxHp = 100;
     public float BossCurrHP = 100;
-    public GameObject HPbar;
-    public GameObject AttakBar;
+    public SimpleHealthBar HPbar;
+    public SimpleHealthBar AttakBar;
     private Animator anim;
     public Text GameOverText;
-
+    public GameObject Player;
     bool canUpdate = true;
     float TimerForAttakBar = 5.0f;
 
@@ -25,7 +25,7 @@ public class Boss : MonoBehaviour
 
         //add floatingText here
 
-        HPbar.GetComponent<SimpleHealthBar>().UpdateBar(BossCurrHP, BossMaxHp);
+        HPbar.UpdateBar(BossCurrHP, BossMaxHp);
 
         anim.Play(HitAnimation);
 
@@ -39,18 +39,19 @@ public class Boss : MonoBehaviour
     {
         GameOverText.text = "You Won";
         GameOverText.enabled = true;
+        anim.Play("Dying");
     }
     void Start()
     {
         anim = GetComponent<Animator>();
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (canUpdate)
         {
             TimerForAttakBar -= Time.deltaTime;
-            AttakBar.GetComponent<SimpleHealthBar>().UpdateBar(TimerForAttakBar, 5.0f);
+            AttakBar.UpdateBar(TimerForAttakBar, 5.0f);
             if (TimerForAttakBar <= 0)
             {
                 canUpdate = false;
@@ -60,7 +61,6 @@ public class Boss : MonoBehaviour
         {
             this.gameObject.GetComponent<BossAttack>().Hit();
             StartCoroutine(CoolDown(0.7f));
-            //   Player.GetComponent<PlayerScript>().setDmg(50);
             canUpdate = true;
             TimerForAttakBar = 10.0f;
         }
@@ -69,6 +69,7 @@ public class Boss : MonoBehaviour
     IEnumerator CoolDown(float time)
     {
         yield return new WaitForSeconds(time);
+        Player.GetComponent<Player>().setDmg(50);
     }
 
 }

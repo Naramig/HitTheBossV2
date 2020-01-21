@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public Vector3 mousePos;
 
     public SimpleHealthBar attackBar;
+    public SimpleHealthBar HelthBar;
+
     AIPath aIPath;
     AIDestinationSetter destinationSetter;
     Spear spear;
@@ -51,7 +53,11 @@ public class Player : MonoBehaviour
             attackMod = 0;
         }
     }
+    public void setDmg(float damage) {
+        currHp -= damage;
+        HelthBar.UpdateBar(currHp, maxHp);
 
+    }
     void Hit()
     {
 
@@ -66,6 +72,7 @@ public class Player : MonoBehaviour
                 RaycastHit hit;
                 Physics.Raycast(ray, out hit);
 
+             
                     if (hit.collider != null)
                     {
                     //spear.speared = false;

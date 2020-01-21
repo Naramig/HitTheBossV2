@@ -217,7 +217,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8d36d1f10ed80434c870b72948795e68, type: 2}
+  - {fileID: 2100000, guid: b7aa05271c9a6be42ba3cf62e2648e7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1191,6 +1191,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19b4eab52f3eeb046b7fc53dbd00a52d, type: 3}
+--- !u!114 &3773326333939936141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3773326335148890511, guid: 19b4eab52f3eeb046b7fc53dbd00a52d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3773326333939936140}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479602689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1310e65397a274d44a776b51d6937f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5101425913325138844 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8256905275993905168, guid: 19b4eab52f3eeb046b7fc53dbd00a52d,
@@ -1208,21 +1220,26 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 294234682}
-    - target: {fileID: 1983560847934380718, guid: 43b5fad491a9edd4c99edcb98df5f45c,
+    - target: {fileID: 1894694487323014398, guid: 43b5fad491a9edd4c99edcb98df5f45c,
         type: 3}
-      propertyPath: m_Size.z
-      value: 6.5635967
+      propertyPath: maxHp
+      value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 1983560847934380718, guid: 43b5fad491a9edd4c99edcb98df5f45c,
+    - target: {fileID: 1894694487323014398, guid: 43b5fad491a9edd4c99edcb98df5f45c,
         type: 3}
-      propertyPath: m_Center.z
-      value: -1.7182015
+      propertyPath: currHp
+      value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 4806701875592978554, guid: 43b5fad491a9edd4c99edcb98df5f45c,
+    - target: {fileID: 1894694487323014398, guid: 43b5fad491a9edd4c99edcb98df5f45c,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 1894694487323014398, guid: 43b5fad491a9edd4c99edcb98df5f45c,
+        type: 3}
+      propertyPath: attackBar
+      value: 
+      objectReference: {fileID: 3773326333939936141}
     - target: {fileID: 8622650901149353993, guid: 43b5fad491a9edd4c99edcb98df5f45c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1283,5 +1300,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4932453515711961019, guid: 43b5fad491a9edd4c99edcb98df5f45c, type: 3}
+    - {fileID: 963194234, guid: 43b5fad491a9edd4c99edcb98df5f45c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43b5fad491a9edd4c99edcb98df5f45c, type: 3}

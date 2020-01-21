@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6848599058693955625}
   - component: {fileID: 7318448755629772177}
   - component: {fileID: 6282322341270219715}
+  - component: {fileID: -8497688732531150247}
   m_Layer: 8
   m_Name: LeftArmArmor
   m_TagString: LeftArmArmor
@@ -110,3 +111,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8497688732531150247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848599058693955631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currHp: 20
+  maxHp: 20
+  dmgMod: 2
+  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  text: {fileID: 1907393670541356434, guid: d7544d643a915eb4695a8674812431c9, type: 3}
+  floatingText: {fileID: 1739377859452008845, guid: d7544d643a915eb4695a8674812431c9,
+    type: 3}

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5925788273267639868}
   - component: {fileID: 2420111050327348490}
   - component: {fileID: 9170008567009006084}
+  - component: {fileID: -4403922090811201590}
   m_Layer: 8
   m_Name: Helmet
   m_TagString: Helmet
@@ -4866,3 +4867,22 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 58508657d4a8c465da0fbd7d0f75c8c6, type: 2}
+--- !u!114 &-4403922090811201590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925788273267639870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currHp: 20
+  maxHp: 20
+  dmgMod: 2
+  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  text: {fileID: 1907393670541356434, guid: d7544d643a915eb4695a8674812431c9, type: 3}
+  floatingText: {fileID: 1739377859452008845, guid: d7544d643a915eb4695a8674812431c9,
+    type: 3}

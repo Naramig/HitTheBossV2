@@ -31,6 +31,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &6082334980607319966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934447057573389786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fb2742ab2294a4280e268e055f196d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1894694487323014398, guid: 43b5fad491a9edd4c99edcb98df5f45c,
+    type: 3}
+  speared: 0
 --- !u!1001 &3988852684947815635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38,11 +53,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3988852685151101402}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: c0aa1b26e54f63c4db1ef14dabef5e67,
-        type: 3}
-      propertyPath: m_Name
-      value: Spear-01
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c0aa1b26e54f63c4db1ef14dabef5e67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -118,8 +128,19 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ecd65aaa619ec204792526de8871717a, type: 2}
+    - target: {fileID: -927199367670048503, guid: c0aa1b26e54f63c4db1ef14dabef5e67,
+        type: 3}
+      propertyPath: m_Name
+      value: Spear-01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0aa1b26e54f63c4db1ef14dabef5e67, type: 3}
+--- !u!1 &4934447057573389786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: c0aa1b26e54f63c4db1ef14dabef5e67,
+    type: 3}
+  m_PrefabInstance: {fileID: 3988852684947815635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8224123416579725257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c0aa1b26e54f63c4db1ef14dabef5e67,

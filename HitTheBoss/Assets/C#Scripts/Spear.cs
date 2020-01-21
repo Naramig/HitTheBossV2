@@ -5,43 +5,49 @@ using UnityEngine;
 public class Spear : MonoBehaviour
 {
     public Player playerController;
-    float canSpearedTimer = 0.01f;
+    float canSpearedTimer = 0.5f;
     
     public bool speared = false;
     Vector3 startPos;
+    Quaternion startRot;
 
     private void Start()
     {
-        playerController = GetComponent<Player>();
+        playerController = GetComponentInParent<Player>();
         startPos = transform.position;
+        startRot = transform.rotation;
     }
 
 
-    void SpearAnimation()
+    public void SpearAnimation()
     {
+        
         if (speared)
         {
+            
             canSpearedTimer -= Time.deltaTime;
             if (canSpearedTimer > 0)
             {
-                transform.rotation = Quaternion.LookRotation(playerController.mousePos - startPos);
-                transform.position = Vector3.Lerp(transform.position, playerController.mousePos + new Vector3(0, 0, 0.5f), Time.deltaTime);
+                
+                transform.rotation = Quaternion.LookRotation(playerController.mousePos - transform.position);
+                transform.position = Vector3.Lerp(transform.position, playerController.mousePos - new Vector3(0, 0, 2.5f), Time.deltaTime);
             }
-            if (canSpearedTimer <= 0)
+
+            if (canSpearedTimer <= -0.5f)
             {
-                transform.position = Vector3.Lerp(transform.position, startPos, Time.deltaTime);
-
-                if (canSpearedTimer <= 0.5)
-                {
-
-                    speared = false;
-                }
+                speared = false;
             }
-            
+            if (canSpearedTimer <= 0 )
+            {
+                transform.rotation = startRot;
+                transform.position = Vector3.Lerp(transform.position, startPos, Time.deltaTime);
+            }
+
         }
+
         if (!speared)
         {
-            canSpearedTimer = 0.01f;            
+            canSpearedTimer = 0.5f;            
         }
     }
 

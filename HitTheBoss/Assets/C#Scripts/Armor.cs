@@ -27,6 +27,36 @@ public class Armor : MonoBehaviour
         playerController = GetComponent<Player>();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Spear")
+        {
+            dmg = Mathf.CeilToInt(playerController.attackMod * 2) - dmgMod;
+
+            if (dmg < 0)
+            {
+                dmg = 0;
+            }
+            newAudio.clip = armor;
+            newAudio.Play();
+            currHp -= dmg;
+            FloatingText();
+            if (currHp <= 0)
+            {
+                rb.isKinematic = false;
+                transform.SetParent(null);
+            }
+
+            else if (currHp > 0)
+            {
+                animator.Play("Vibration");
+                playerController.attacked = true;
+
+            }
+
+        }
+    }
+
     public void DMG()
     {
         dmg = Mathf.CeilToInt(playerController.attackMod * 2) - dmgMod;

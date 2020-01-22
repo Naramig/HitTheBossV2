@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1907393670541356434}
   - component: {fileID: 802650081707533377}
   - component: {fileID: 86875644989997149}
+  - component: {fileID: 1269146907358876141}
   m_Layer: 0
   m_Name: FloatingText
   m_TagString: Untagged
@@ -80,7 +81,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739377859452008845}
-  m_Text: 19
+  m_Text: 1
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 2
@@ -125,3 +126,15 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 19e3e776b2a16bd408963774f3f2ff48, type: 2}
+--- !u!114 &1269146907358876141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739377859452008845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba08e18352ce5484eb2fbb9e5e59dc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

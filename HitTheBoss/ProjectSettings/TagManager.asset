@@ -25,6 +25,8 @@ TagManager:
   - CounterAttackTrigger
   - MapTrigger
   - Main
+  - Spear
+  - armor
   layers:
   - Default
   - TransparentFX

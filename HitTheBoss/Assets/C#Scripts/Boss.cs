@@ -9,9 +9,9 @@ public class Boss : MonoBehaviour
     public float BossCurrHP = 100;
     public SimpleHealthBar HPbar;
     public SimpleHealthBar AttakBar;
-    private Animator anim;
+    private Animator animator;
     public Text GameOverText;
-    public GameObject Player;
+    Player playerController;
     bool canUpdate = true;
     float TimerForAttakBar = 5.0f;
 
@@ -27,7 +27,7 @@ public class Boss : MonoBehaviour
 
         HPbar.UpdateBar(BossCurrHP, BossMaxHp);
 
-        anim.Play(HitAnimation);
+        animator.Play(HitAnimation);
 
         if (BossCurrHP <= 0)
         {
@@ -37,13 +37,14 @@ public class Boss : MonoBehaviour
 
     void isDead()
     {
-        GameOverText.text = "You Won";
-        GameOverText.enabled = true;
-        anim.Play("Dying");
+        //GameOverText.text = "You Won";
+        //GameOverText.enabled = true;
+        animator.Play("Dying");
     }
     void Start()
     {
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        playerController = FindObjectOfType<Player>();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -64,12 +65,18 @@ public class Boss : MonoBehaviour
             canUpdate = true;
             TimerForAttakBar = 10.0f;
         }
+        if (playerController.isDead)
+        {
+            animator.Play("FistPump");
+        }
 
     }
+    
     IEnumerator CoolDown(float time)
     {
         yield return new WaitForSeconds(time);
-        Player.GetComponent<Player>().setDmg(50);
+        playerController.SetDMG(50);
     }
+    
 
 }

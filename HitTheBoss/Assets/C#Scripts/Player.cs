@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     Shield shield;
     Ray ray;
     Armor armor;
-    Boss boss;
+    Enemy enemy;
     MiniMapClicker miniMapClicker;
     RaycastHit hit;
 
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         armor = FindObjectOfType<Armor>();
         aIPath = GetComponent<AIPath>();
         aIPath.canMove = false;
-        boss = FindObjectOfType<Boss>();
+        enemy = FindObjectOfType<Enemy>();
         shield = GetComponentInChildren<Shield>();
         miniMapClicker = FindObjectOfType<MiniMapClicker>();
         aIPath.canMove = false;
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
     void CanMove()
     {
 
-        if (boss.enemyIsDead && !miniMapClicker.mapIsOpen)
+        if (enemy.enemyIsDead && !miniMapClicker.mapIsOpen)
         {
 
 

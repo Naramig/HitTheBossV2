@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boss : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    float BossMaxHp = 100;
-    public float BossCurrHP = 100;
-    public SimpleHealthBar HPbar;
+    float MaxHp = 100;
+    public float CurrHP = 100;
+    public SimpleHealthBar HPBar;
     public SimpleHealthBar AttackBar;
     private Animator animator;
     public Text GameOverText;
@@ -32,17 +32,17 @@ public class Boss : MonoBehaviour
     {
         if (!enemyIsDead)
         {
-            BossCurrHP -= AttackValue;
+            CurrHP -= AttackValue;
             floatingText.Spawn(AttackValue);
             HitSound.Play();
             playerController.attacked = true;
 
 
-            HPbar.UpdateBar(BossCurrHP, BossMaxHp);
+            HPBar.UpdateBar(CurrHP, MaxHp);
 
             animator.Play(HitAnimation);
 
-            if (BossCurrHP <= 0)
+            if (CurrHP <= 0)
             {
                 isDead();
             }
@@ -88,7 +88,7 @@ public class Boss : MonoBehaviour
         }
         else
         {
-            this.gameObject.GetComponent<BossAttack>().Hit();
+            this.gameObject.GetComponent<EnemyAttack>().Hit();
             StartCoroutine(CoolDown(0.7f));
             canUpdate = true;
             TimerForAttackBar = 10.0f;

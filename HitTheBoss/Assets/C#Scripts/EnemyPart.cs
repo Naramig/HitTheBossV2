@@ -9,14 +9,14 @@ public class EnemyPart : MonoBehaviour
     AudioSource newAudio;
     public AudioClip hitAudio;
     public string AnimationName;
-    Boss boss;
+    Enemy boss;
     Player playerController;
     // Start is called before the first frame update
     void Start()
     {
         playerController = FindObjectOfType<Player>();
         newAudio = FindObjectOfType<AudioSource>();
-        boss = FindObjectOfType<Boss>();
+        boss = FindObjectOfType<Enemy>();
     }
     public void DMG()
     {

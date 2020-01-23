@@ -18,11 +18,13 @@ public class Player : MonoBehaviour
     public bool isDead = false;
 
     AIPath aIPath;
-    AIDestinationSetter destinationSetter;
+    
     Spear spear;
     Shield shield;
     Ray ray;
     Armor armor;
+    Boss boss;
+    Map map;
     bool canTap = true;
     
     float canTapTimer = 0.5f;
@@ -37,8 +39,9 @@ public class Player : MonoBehaviour
         armor = FindObjectOfType<Armor>();
         aIPath = GetComponent<AIPath>();
         aIPath.canMove = false;
-        
+        boss = FindObjectOfType<Boss>();
         shield = GetComponentInChildren<Shield>();
+        map = FindObjectOfType<Map>();
     }
 
     public void SetDMG(float dmg)
@@ -66,9 +69,9 @@ public class Player : MonoBehaviour
             attackMod += Time.deltaTime;
             attackBar.UpdateBar(attackMod, maxAttackValue);
 
-            if (attackMod >= 10)
+            if (attackMod >= 4)
             {
-                attackMod = 10;
+                attackMod = 4;
             }
         }
         if (attacked)
@@ -79,7 +82,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    void CanMove()
+    {
+        if (boss.EnemyIsDead && map.MapIsOpen)
+        {
+            aIPath.canMove = true;
+        }
+    }
     void Hit()
     {
 
@@ -131,5 +140,6 @@ public class Player : MonoBehaviour
     {
         Hit();
         AttackBar();
+        CanMove();
     }
 }

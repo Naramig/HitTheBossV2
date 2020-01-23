@@ -9,15 +9,15 @@ public class Armor : MonoBehaviour
     public float dmgMod;
     public AudioClip armor;
 
-    public GameObject parent;
+    //GameObject parent;
     FloatingText floatingText;
     AudioSource newAudio;
     Animator animator;
     Rigidbody rb;
-    
-    
+
+
     Player playerController;
-    float dmg;
+
 
     private void Start()
     {
@@ -25,23 +25,19 @@ public class Armor : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         playerController = FindObjectOfType<Player>();
-        floatingText = gameObject.GetComponent<FloatingText>();
-       // parent = GetComponentInParent<GameObject>();
+        floatingText = FindObjectOfType<FloatingText>();
+        //parent = GetComponentInParent<GameObject>();
     }
 
 
     public void DMG()
     {
-        dmg = Mathf.CeilToInt(playerController.attackMod * 2) - dmgMod;
+        float dmg = Mathf.Clamp(Mathf.CeilToInt(playerController.attackMod * 2) - dmgMod,0,10);
 
-        if (dmg < 0)
-        {
-            dmg = 0;
-        }
         newAudio.clip = armor;
         newAudio.Play();
         currHp -= dmg;
-        //floatingText.Spawn(dmg, parent);
+        floatingText.Spawn(dmg);
         if (currHp <= 0)
         {
             rb.isKinematic = false;
@@ -55,14 +51,4 @@ public class Armor : MonoBehaviour
         }
     }
 
-
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
 }

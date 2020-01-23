@@ -87,28 +87,11 @@ public class Player : MonoBehaviour
 
     void CanMove()
     {
-
-        if (boss.enemyIsDead && !miniMapClicker.mapIsOpen)
+        if (boss.enemyIsDead && map.MapIsOpen)
         {
-
-
             aIPath.canMove = true;
         }
-
     }
-
-    void OpenCloseMap()
-    {
-        if (miniMapClicker.mapIsOpen)
-        {
-            map.SetActive(true);
-        }
-        else
-        {
-            map.SetActive(false);
-        }
-    }
-
     void Hit()
     {
 

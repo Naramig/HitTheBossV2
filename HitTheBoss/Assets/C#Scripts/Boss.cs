@@ -5,20 +5,22 @@ using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
-    float BossMaxHp = 100;
-    public float BossCurrHP = 100;
-    public SimpleHealthBar HPbar;
-    public SimpleHealthBar AttackBar;
+    public float bossCurrHP = 100;
+    public bool enemyIsDead = false;
+    public float bossMaxHp = 100;
+    public SimpleHealthBar hPbar;
+    public SimpleHealthBar attackBar;
+    public Text gameOverText;
+
+    
+    private bool canUpdate = true;
+    private float timerForAttackBar = 5.0f;
+    private bool deadAnimationIsPlaying = false;
     private Animator animator;
-    public Text GameOverText;
 
     Player playerController;
     FloatingText floatingText;
-
-    bool canUpdate = true;
-    float TimerForAttackBar = 5.0f;
-    bool DeadAnimationIsPlayed = false;
-    public bool enemyIsDead;
+    
 
     void Start()
     {
@@ -28,36 +30,34 @@ public class Boss : MonoBehaviour
         floatingText = FindObjectOfType<FloatingText>();
     }
 
-    public void DmgToBoss(float AttackValue, AudioSource HitSound, string HitAnimation)
+    public void DmgToBoss(float attackValue, AudioSource hitSound, string hitAnimation)
     {
         if (!enemyIsDead)
         {
-            BossCurrHP -= AttackValue;
-            floatingText.Spawn(AttackValue);
-            HitSound.Play();
+            bossCurrHP -= attackValue;
+            floatingText.Spawn(attackValue);
+            hitSound.Play();
             playerController.attacked = true;
 
 
-            HPbar.UpdateBar(BossCurrHP, BossMaxHp);
+            hPbar.UpdateBar(bossCurrHP, bossMaxHp);
 
-            animator.Play(HitAnimation);
+            animator.Play(hitAnimation);
 
-            if (BossCurrHP <= 0)
+            if (bossCurrHP <= 0)
             {
-                isDead();
+                IsDead();
             }
         }
     }
 
-    void isDead()
+    void IsDead()
     {
-
-        GameOverText.text = "You Won";
-        GameOverText.gameObject.SetActive(true);
-        animator.Play("Dying");
-        Destroy(gameObject, 3);
-        
-        
+        gameOverText.text = "You Won";
+        gameOverText.gameObject.SetActive(true);
+        StartCoroutine(CoolDownDead(3.7f));
+        enemyIsDead = true;
+        Destroy(this, 3);
     }
     private void OnDestroy()
     {
@@ -71,17 +71,17 @@ public class Boss : MonoBehaviour
         }
         else if (playerController.isDead)
         {
-            if (!DeadAnimationIsPlayed)
+            if (!deadAnimationIsPlaying)
             {
-                DeadAnimationIsPlayed = true;
-                animator.Play("FistPump");
+                deadAnimationIsPlaying = true;
+                animator.Play("Won");
             }
         }
         else if (canUpdate)
         {
-            TimerForAttackBar -= Time.deltaTime;
-            AttackBar.UpdateBar(TimerForAttackBar, 5.0f);
-            if (TimerForAttackBar <= 0)
+            timerForAttackBar -= Time.deltaTime;
+            attackBar.UpdateBar(timerForAttackBar, 5.0f);
+            if (timerForAttackBar <= 0)
             {
                 canUpdate = false;
             }
@@ -91,9 +91,9 @@ public class Boss : MonoBehaviour
             this.gameObject.GetComponent<BossAttack>().Hit();
             StartCoroutine(CoolDown(0.7f));
             canUpdate = true;
-            TimerForAttackBar = 10.0f;
+            timerForAttackBar = 10.0f;
         }
-        
+       
 
     }
     
@@ -102,6 +102,10 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(time);
         playerController.SetDMG(50);
     }
-    
+    IEnumerator CoolDownDead(float time)
+    {
+        yield return new WaitForSeconds(time);
+        animator.Play("Dying");
+    }
 
 }

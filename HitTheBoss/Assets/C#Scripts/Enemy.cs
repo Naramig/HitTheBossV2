@@ -5,19 +5,20 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    float MaxHp = 100;
-    public float CurrHP = 100;
-    public SimpleHealthBar HPBar;
-    public SimpleHealthBar AttackBar;
+    float maxHp = 100;
+    public float currHP = 100;
+    public SimpleHealthBar hPBar;
+    public SimpleHealthBar attackBar;
     private Animator animator;
-    public Text GameOverText;
+    public Text gameOverText;
 
     Player playerController;
     FloatingText floatingText;
 
     bool canUpdate = true;
-    float TimerForAttackBar = 5.0f;
-    bool DeadAnimationIsPlayed = false;
+    float TimerForAttackBar = 2.5f;
+    static float maxTimaerForAttakBar = 2.5f;
+    bool deadAnimationIsPlayed = false;
     public bool enemyIsDead;
 
     void Start()
@@ -32,17 +33,17 @@ public class Enemy : MonoBehaviour
     {
         if (!enemyIsDead)
         {
-            CurrHP -= AttackValue;
+            currHP -= AttackValue;
             floatingText.Spawn(AttackValue);
             HitSound.Play();
             playerController.attacked = true;
 
 
-            HPBar.UpdateBar(CurrHP, MaxHp);
+            hPBar.UpdateBar(currHP, maxHp);
 
             animator.Play(HitAnimation);
 
-            if (CurrHP <= 0)
+            if (currHP <= 0)
             {
                 isDead();
             }
@@ -52,8 +53,8 @@ public class Enemy : MonoBehaviour
     void isDead()
     {
 
-        GameOverText.text = "You Won";
-        GameOverText.gameObject.SetActive(true);
+        gameOverText.text = "You Won";
+        gameOverText.gameObject.SetActive(true);
         animator.Play("Dying");
         Destroy(gameObject, 3);
         
@@ -71,16 +72,16 @@ public class Enemy : MonoBehaviour
         }
         else if (playerController.isDead)
         {
-            if (!DeadAnimationIsPlayed)
+            if (!deadAnimationIsPlayed)
             {
-                DeadAnimationIsPlayed = true;
-                animator.Play("FistPump");
+                deadAnimationIsPlayed = true;
+                animator.Play("Won");
             }
         }
         else if (canUpdate)
         {
             TimerForAttackBar -= Time.deltaTime;
-            AttackBar.UpdateBar(TimerForAttackBar, 5.0f);
+            attackBar.UpdateBar(TimerForAttackBar, maxTimaerForAttakBar);
             if (TimerForAttackBar <= 0)
             {
                 canUpdate = false;
@@ -89,9 +90,10 @@ public class Enemy : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<EnemyAttack>().Hit();
-            StartCoroutine(CoolDown(0.7f));
+            
             canUpdate = true;
-            TimerForAttackBar = 10.0f;
+            TimerForAttackBar = maxTimaerForAttakBar;
+            StartCoroutine(CoolDown(0.7f));
         }
         
 

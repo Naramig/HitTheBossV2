@@ -4,24 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Head
-  - Body
-  - LeftGrease
-  - RightGrease
-  - RightLegguard
-  - LeftLegguard
-  - Helmet
-  - Breastplate
-  - RightArm
-  - LeftArm
-  - LeftUpLeg
-  - RightUpLeg
-  - LeftDownLeg
-  - RightDownLeg
-  - LeftArmArmor
-  - RightArmArmor
-  - LeftForeArm
-  - RightForeArm
   - CounterAttackTrigger
   - MapTrigger
   - Main

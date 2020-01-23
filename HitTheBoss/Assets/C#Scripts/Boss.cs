@@ -8,25 +8,32 @@ public class Boss : MonoBehaviour
     float BossMaxHp = 100;
     public float BossCurrHP = 100;
     public SimpleHealthBar HPbar;
-    public SimpleHealthBar AttakBar;
+    public SimpleHealthBar AttackBar;
     private Animator animator;
     public Text GameOverText;
     Player playerController;
+    FloatingText floatingText;
     bool canUpdate = true;
-    float TimerForAttakBar = 5.0f;
+    float TimerForAttackBar = 5.0f;
     bool DeadAnimationIsPlayed = false;
-    bool EnemyIsDead = false;
+    public bool EnemyIsDead = false;
 
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        playerController = FindObjectOfType<Player>();
+        floatingText = FindObjectOfType<FloatingText>();
+    }
 
     public void DmgToBoss(float AttackValue, AudioSource HitSound, string HitAnimation)
     {
         if (!EnemyIsDead)
         {
             BossCurrHP -= AttackValue;
-
+            floatingText.Spawn(AttackValue);
             HitSound.Play();
+            playerController.attacked = true;
 
-            //add floatingText here
 
             HPbar.UpdateBar(BossCurrHP, BossMaxHp);
 
@@ -45,13 +52,9 @@ public class Boss : MonoBehaviour
         GameOverText.gameObject.SetActive(true);
         animator.Play("Dying");
         EnemyIsDead = true;
+        Destroy(this, 3);
     }
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-        playerController = FindObjectOfType<Player>();
-    }
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         if (EnemyIsDead)
@@ -67,9 +70,9 @@ public class Boss : MonoBehaviour
         }
         else if (canUpdate)
         {
-            TimerForAttakBar -= Time.deltaTime;
-            AttakBar.UpdateBar(TimerForAttakBar, 5.0f);
-            if (TimerForAttakBar <= 0)
+            TimerForAttackBar -= Time.deltaTime;
+            AttackBar.UpdateBar(TimerForAttackBar, 5.0f);
+            if (TimerForAttackBar <= 0)
             {
                 canUpdate = false;
             }
@@ -79,7 +82,7 @@ public class Boss : MonoBehaviour
             this.gameObject.GetComponent<BossAttack>().Hit();
             StartCoroutine(CoolDown(0.7f));
             canUpdate = true;
-            TimerForAttakBar = 10.0f;
+            TimerForAttackBar = 10.0f;
         }
        
 

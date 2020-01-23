@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPart : MonoBehaviour
 {
-    public float damage;
+    
     FloatingText floatingText;
     AudioSource newAudio;
     public AudioClip hitAudio;
@@ -20,15 +20,11 @@ public class EnemyPart : MonoBehaviour
     }
     public void DMG()
     {
-      //  float dmg = Mathf.CeilToInt(playerController.attackMod * 2) - damage;
+        float dmg = Mathf.CeilToInt(playerController.attackMod * 2);
         newAudio.clip = hitAudio;
-        boss.DmgToBoss(damage, newAudio, AnimationName);
+        boss.DmgToBoss(dmg, newAudio, AnimationName);
         Debug.Log("HERE");
 
     }
-        // Update is called once per frame
-        void Update()
-    {
-        
-    }
+
 }

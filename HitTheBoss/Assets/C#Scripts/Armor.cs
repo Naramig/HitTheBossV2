@@ -46,7 +46,7 @@ public class Armor : MonoBehaviour
 
         else if (currHp > 0)
         {
-            animator.Play("Vibration");
+         //   animator.Play("Vibration");
             playerController.attacked = true;
         }
     }

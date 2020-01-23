@@ -9,20 +9,20 @@ public class EnemyPart : MonoBehaviour
     AudioSource audio;
     public AudioClip hitAudio;
     public string animationName;
-    Boss boss;
+    Enemy enemy;
     Player playerController;
     // Start is called before the first frame update
     void Start()
     {
         playerController = FindObjectOfType<Player>();
         audio = FindObjectOfType<AudioSource>();
-        boss = FindObjectOfType<Boss>();
+        enemy = FindObjectOfType<Enemy>();
     }
     public void DMG()
     {
         float dmg = Mathf.CeilToInt(playerController.attackMod * 2);
         audio.clip = hitAudio;
-        boss.DmgToBoss(dmg, audio, animationName);
+        enemy.DmgToBoss(dmg, audio, animationName);
         Debug.Log("HERE");
 
     }

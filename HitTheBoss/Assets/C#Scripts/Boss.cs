@@ -11,15 +11,18 @@ public class Boss : MonoBehaviour
     public SimpleHealthBar AttackBar;
     private Animator animator;
     public Text GameOverText;
+
     Player playerController;
     FloatingText floatingText;
+
     bool canUpdate = true;
     float TimerForAttackBar = 5.0f;
     bool DeadAnimationIsPlayed = false;
-    public bool EnemyIsDead = false;
+    public bool enemyIsDead;
 
     void Start()
     {
+        enemyIsDead = false;
         animator = GetComponent<Animator>();
         playerController = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<FloatingText>();
@@ -27,7 +30,7 @@ public class Boss : MonoBehaviour
 
     public void DmgToBoss(float AttackValue, AudioSource HitSound, string HitAnimation)
     {
-        if (!EnemyIsDead)
+        if (!enemyIsDead)
         {
             BossCurrHP -= AttackValue;
             floatingText.Spawn(AttackValue);
@@ -48,16 +51,22 @@ public class Boss : MonoBehaviour
 
     void isDead()
     {
+
         GameOverText.text = "You Won";
         GameOverText.gameObject.SetActive(true);
         animator.Play("Dying");
-        EnemyIsDead = true;
-        Destroy(this, 3);
+        Destroy(gameObject, 3);
+        
+        
+    }
+    private void OnDestroy()
+    {
+        enemyIsDead = true;
     }
 
     void FixedUpdate()
     {
-        if (EnemyIsDead)
+        if (enemyIsDead)
         {
         }
         else if (playerController.isDead)
@@ -84,7 +93,7 @@ public class Boss : MonoBehaviour
             canUpdate = true;
             TimerForAttackBar = 10.0f;
         }
-       
+        
 
     }
     

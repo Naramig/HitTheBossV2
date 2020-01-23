@@ -23,7 +23,7 @@ public class EnemyPart : MonoBehaviour
         float dmg = Mathf.CeilToInt(playerController.attackMod * 2);
         newAudio.clip = hitAudio;
         boss.DmgToBoss(dmg, newAudio, AnimationName);
-        Debug.Log("HERE");
+        
 
     }
 

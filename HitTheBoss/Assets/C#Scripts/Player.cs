@@ -9,39 +9,42 @@ public class Player : MonoBehaviour
     public float attackMod;
     public float maxHp;
     public float currHp;
+    public bool isDead = false;
+    public bool attacked;
     public Camera cam;
     public Vector3 mousePos;
-    public bool attacked;
     public SimpleHealthBar attackBar;
     public SimpleHealthBar healthBar;
-    public Text GameOverText;
-    public bool isDead = false;
+    public Text gameOverText;
+    public GameObject map;
 
     AIPath aIPath;
-    
     Spear spear;
     Shield shield;
     Ray ray;
     Armor armor;
     Boss boss;
-    Map map;
-    bool canTap = true;
-    
+    MiniMapClicker miniMapClicker;
+    RaycastHit hit;
+
     float canTapTimer = 0.5f;
     float canAttackTimer = 4;
     float maxAttackValue = 4;
-    RaycastHit hit;
+    bool canTap = true;
+
 
 
     private void Start()
     {
+        
         spear = GetComponentInChildren<Spear>();
         armor = FindObjectOfType<Armor>();
         aIPath = GetComponent<AIPath>();
         aIPath.canMove = false;
         boss = FindObjectOfType<Boss>();
         shield = GetComponentInChildren<Shield>();
-        map = FindObjectOfType<Map>();
+        miniMapClicker = FindObjectOfType<MiniMapClicker>();
+        aIPath.canMove = false;
     }
 
     public void SetDMG(float dmg)
@@ -53,8 +56,8 @@ public class Player : MonoBehaviour
             if (currHp <= 0)
             {
                 isDead = true;
-                GameOverText.text = "GameOver";
-                GameOverText.gameObject.SetActive(true);
+                gameOverText.text = "GameOver";
+                gameOverText.gameObject.SetActive(true);
             }
         }
 
@@ -84,11 +87,28 @@ public class Player : MonoBehaviour
 
     void CanMove()
     {
-        if (boss.EnemyIsDead && map.MapIsOpen)
+
+        if (boss.enemyIsDead && !miniMapClicker.mapIsOpen)
         {
+
+
             aIPath.canMove = true;
         }
+
     }
+
+    void OpenCloseMap()
+    {
+        if (miniMapClicker.mapIsOpen)
+        {
+            map.SetActive(true);
+        }
+        else
+        {
+            map.SetActive(false);
+        }
+    }
+
     void Hit()
     {
 
@@ -141,5 +161,6 @@ public class Player : MonoBehaviour
         Hit();
         AttackBar();
         CanMove();
+        OpenCloseMap();
     }
 }

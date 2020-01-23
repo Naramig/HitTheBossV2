@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BossAttack : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
     public GameObject rightHand;
     public GameObject leftFoot;

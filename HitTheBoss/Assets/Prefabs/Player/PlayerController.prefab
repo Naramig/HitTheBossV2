@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fb2742ab2294a4280e268e055f196d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1894694487323014398}
+  player: {fileID: 1894694487323014398}
   speared: 0
 --- !u!1001 &4679960388340602586
 PrefabInstance:
@@ -731,8 +731,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.37
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6082334980607319966, guid: 65e4768e76e2a72478c296d035ecb3b0, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e4768e76e2a72478c296d035ecb3b0, type: 3}
 --- !u!1 &326548738637230848 stripped
 GameObject:

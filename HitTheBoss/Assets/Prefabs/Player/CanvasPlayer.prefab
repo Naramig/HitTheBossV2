@@ -328,7 +328,7 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 16d2f29b7b5725e4c96eed5b0748ea55, type: 2}
---- !u!114 &117392854
+--- !u!114 &117392852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,7 +341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   miniMapCam: {fileID: 0}
-  target: {fileID: 0}
   mapIsOpen: 0
 --- !u!1001 &3197924376301541030
 PrefabInstance:

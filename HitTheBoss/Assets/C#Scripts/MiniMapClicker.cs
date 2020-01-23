@@ -10,25 +10,25 @@ public class MiniMapClicker : MonoBehaviour, IPointerClickHandler
     
     public Camera miniMapCam;
     public RaycastHit miniMapHit;
-    public GameObject target;
-    
+    public bool mapIsOpen;
+
     Player player;
 
     private void Start()
     {
-
+        mapIsOpen = false;
         player = FindObjectOfType<Player>();
     }
 
 
-    public bool mapIsOpen = false;
+    
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (mapIsOpen)
         {
             Vector2 localCursor = new Vector2(0, 0);
-            target = null;
+            
             
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RawImage>().rectTransform, eventData.pressPosition, eventData.pressEventCamera, out localCursor))
             {
@@ -48,13 +48,7 @@ public class MiniMapClicker : MonoBehaviour, IPointerClickHandler
 
                 CastMiniMapRayToWorld(localCursor);
                 
-                if (target.name == "TransitionPoint")
-                {
-                 
-                    player.GetComponent<AIDestinationSetter>().target = miniMapHit.collider.gameObject.transform;
-                    
-                    mapIsOpen = false;
-                }
+
             }
         }
 
@@ -69,9 +63,15 @@ public class MiniMapClicker : MonoBehaviour, IPointerClickHandler
 
         if (Physics.Raycast(miniMapRay, out miniMapHit, Mathf.Infinity))
         {
-            
-            target = miniMapHit.collider.gameObject;
-            
+
+            if (miniMapHit.collider.gameObject.name == "TransitionPoint")
+            {
+
+                player.GetComponent<AIDestinationSetter>().target = miniMapHit.collider.gameObject.transform;
+
+                mapIsOpen = false;
+            }
+
 
         }
 

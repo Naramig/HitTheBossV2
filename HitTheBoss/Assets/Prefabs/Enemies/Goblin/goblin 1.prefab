@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  AnimationName: 
+  animationName: 
 --- !u!1 &532682960476244466
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudio: {fileID: 8300000, guid: fa7a05bd7b9354443ae74a583353f77a, type: 3}
-  AnimationName: BodyHeat
+  animationName: 
 --- !u!1 &577391251639205163
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  AnimationName: 
+  animationName: 
 --- !u!1 &832236892720890491
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudio: {fileID: 8300000, guid: fa7a05bd7b9354443ae74a583353f77a, type: 3}
-  AnimationName: HeadHit
+  animationName: 
 --- !u!136 &8635988611909256981
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  AnimationName: 
+  animationName: 
 --- !u!1 &1633071926777707655
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  AnimationName: 
+  animationName: 
 --- !u!1 &1687853840185672774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,7 +3035,7 @@ GameObject:
   - component: {fileID: 931849777}
   m_Layer: 8
   m_Name: goblin 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3090,9 +3090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b732c5304e8b74e8eb040975cd18f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightHand: {fileID: 4209733976384118703}
-  LeftFoot: {fileID: 5933969946519255708}
-  Sphere: {fileID: 5455672650650008495, guid: 2f72e2fab92bab548ab7e28c31ffef48, type: 3}
+  rightHand: {fileID: 4209733976384118703}
+  leftFoot: {fileID: 0}
+  sphere: {fileID: 5455672650650008495, guid: 2f72e2fab92bab548ab7e28c31ffef48, type: 3}
 --- !u!114 &931849777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3308,7 +3308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  AnimationName: 
+  animationName: 
 --- !u!1 &5340168038411504494
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,7 +3401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  AnimationName: 
+  animationName: 
 --- !u!1 &5933969946519255708
 GameObject:
   m_ObjectHideFlags: 0

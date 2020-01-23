@@ -24,6 +24,7 @@ public class EnemyAttack : MonoBehaviour
         NewSphere.transform.SetParent(temp.transform);
         GetComponent<Animator>().Play(animations[rnd]);
         StartCoroutine(DeleteAfterSomeTime(1.0f, NewSphere));
+        
     }
 
     IEnumerator DeleteAfterSomeTime(float time, GameObject newSphere)

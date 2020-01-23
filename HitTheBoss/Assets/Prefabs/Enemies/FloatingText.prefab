@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 7341528216225231356}
   - component: {fileID: 8695475132294306438}
   - component: {fileID: 1907393670541356434}
-  - component: {fileID: 802650081707533377}
-  - component: {fileID: 86875644989997149}
+  - component: {fileID: 1845480698844595297}
   m_Layer: 0
   m_Name: FloatingText
   m_TagString: Untagged
@@ -80,7 +79,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739377859452008845}
-  m_Text: 0
+  m_Text: 6
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 2
@@ -94,7 +93,7 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190335
---- !u!114 &802650081707533377
+--- !u!114 &1845480698844595297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,25 +102,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1739377859452008845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1465209106, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
+  m_Script: {fileID: 11500000, guid: 1823c440fe5784cde84589a0bd650d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
---- !u!114 &86875644989997149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739377859452008845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -57143145, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 19e3e776b2a16bd408963774f3f2ff48, type: 2}

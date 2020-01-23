@@ -26,7 +26,7 @@ public class Armor : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerController = FindObjectOfType<Player>();
         floatingText = gameObject.GetComponent<FloatingText>();
-        parent = GetComponentInParent<GameObject>();
+       // parent = GetComponentInParent<GameObject>();
     }
 
 

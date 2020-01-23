@@ -36,6 +36,7 @@ public class BossAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(NewSphere);
+
     }
    
 }

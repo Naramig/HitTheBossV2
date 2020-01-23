@@ -14,10 +14,10 @@ public class Boss : MonoBehaviour
     Player playerController;
     bool canUpdate = true;
     float TimerForAttakBar = 5.0f;
+    bool DeadAnimationIsPlayed = false;
 
 
-
-    void DmgToBoss(float AttackValue, AudioSource HitSound, string HitAnimation)
+    public void DmgToBoss(float AttackValue, AudioSource HitSound, string HitAnimation)
     {
         BossCurrHP -= AttackValue * 2;
 
@@ -37,8 +37,8 @@ public class Boss : MonoBehaviour
 
     void isDead()
     {
-        //GameOverText.text = "You Won";
-        //GameOverText.enabled = true;
+        GameOverText.text = "You Won";
+        GameOverText.gameObject.SetActive(true);
         animator.Play("Dying");
     }
     void Start()
@@ -49,7 +49,15 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (canUpdate)
+        if (playerController.isDead)
+        {
+            if (!DeadAnimationIsPlayed)
+            {
+                DeadAnimationIsPlayed = true;
+                animator.Play("FistPump");
+            }
+        }
+        else if (canUpdate)
         {
             TimerForAttakBar -= Time.deltaTime;
             AttakBar.UpdateBar(TimerForAttakBar, 5.0f);
@@ -65,10 +73,7 @@ public class Boss : MonoBehaviour
             canUpdate = true;
             TimerForAttakBar = 10.0f;
         }
-        if (playerController.isDead)
-        {
-            animator.Play("FistPump");
-        }
+       
 
     }
     

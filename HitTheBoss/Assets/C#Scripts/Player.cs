@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
             {
                 isDead = true;
                 GameOverText.text = "GameOver";
-                GameOverText.enabled = true;
+                GameOverText.gameObject.SetActive(true);
             }
         }
 
@@ -101,8 +101,13 @@ public class Player : MonoBehaviour
                     spear.speared = true;
                     if (hit.collider.gameObject.CompareTag("armor"))
                     {
-                        
+
                         hit.collider.gameObject.GetComponent<Armor>().DMG();
+                    }
+                    else if (hit.collider.gameObject.CompareTag("Enemy"))
+                    {
+                        hit.collider.gameObject.GetComponent<EnemyPart>().DMG();
+
                     }
                 }
             }

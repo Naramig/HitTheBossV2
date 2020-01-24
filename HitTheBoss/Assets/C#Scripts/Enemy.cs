@@ -11,15 +11,18 @@ public class Enemy : MonoBehaviour
     public SimpleHealthBar attackBar;
     private Animator animator;
     public Text gameOverText;
-
+    
     Player playerController;
     NumberSpawner floatingText;
 
+    bool counterAttack = false;
     bool canUpdate = true;
     float TimerForAttackBar = 2.5f;
     static float maxTimerForAttakBar = 2.5f;
-    bool deadAnimationIsPlayed = false;
+    bool deadAnimationIsPlaying = false;
     public bool enemyIsDead;
+    AnimatorClipInfo[] currentClipInfo;
+    Animator m_Animator;
 
     void Start()
     {
@@ -28,7 +31,11 @@ public class Enemy : MonoBehaviour
         playerController = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<NumberSpawner>();
     }
-
+    public void CtrAttack()
+    {
+        counterAttack = true;
+        animator.Play("Reaction");
+    }
     public void DmgToBoss(float AttackValue)
     {
         if (!enemyIsDead)
@@ -61,15 +68,17 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         if (enemyIsDead)
         {
         }
         else if (playerController.isDead)
         {
-            if (!deadAnimationIsPlayed)
+            if (!deadAnimationIsPlaying)
             {
-                deadAnimationIsPlayed = true;
+                deadAnimationIsPlaying = true;
                 animator.Play("Won");
+                
             }
         }
         else if (canUpdate)
@@ -84,10 +93,15 @@ public class Enemy : MonoBehaviour
         else
         {
             gameObject.GetComponent<EnemyAttack>().Hit();
-            
             canUpdate = true;
             TimerForAttackBar = maxTimerForAttakBar;
-            StartCoroutine(CoolDown(0.7f));
+            //get current animation clip info
+            currentClipInfo = this.animator.GetCurrentAnimatorClipInfo(0);
+            //Access the current length of the clip
+            float currentClipLength = currentClipInfo[0].clip.length;
+
+            StartCoroutine(CoolDown(currentClipLength / 3.0f));
+            counterAttack = false;
         }
         
 
@@ -96,8 +110,9 @@ public class Enemy : MonoBehaviour
     IEnumerator CoolDown(float time)
     {
         yield return new WaitForSeconds(time);
-        playerController.SetDMG(50);
+        if(!counterAttack)
+            playerController.SetDMG(50);
     }
-    
+  
 
 }

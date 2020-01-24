@@ -138,6 +138,10 @@ public class Player : MonoBehaviour
                         hit.collider.gameObject.GetComponent<EnemyPart>().DMG();
 
                     }
+                    else if (hit.collider.gameObject.CompareTag("CounterAttackTrigger"))
+                    {
+                        hit.collider.gameObject.GetComponentInParent<Enemy>().CtrAttack();
+                    }
                 }
             }
 

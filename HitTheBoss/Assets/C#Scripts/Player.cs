@@ -166,10 +166,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         
-        Hit();
-        AttackBar();
-        CanMove();
-        OpenCloseMap();
         if (!isDead)
         {
             Hit();

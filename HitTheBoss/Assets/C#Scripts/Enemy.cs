@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     public SimpleHealthBar hPBar;
     public SimpleHealthBar attackBar;
     private Animator animator;
-    public Text gameOverText;
     
    
     public bool canAttack;
@@ -24,11 +23,10 @@ public class Enemy : MonoBehaviour
     float TimerForAttackBar = 2.5f;
     static float maxTimerForAttakBar = 2.5f;
     bool deadAnimationIsPlaying = false;
-    public bool enemyIsDead;
     AnimatorClipInfo[] currentClipInfo;
     Animator m_Animator;
 
-    void Start()
+   
     bool deadAnimationIsPlayed = false;
     public static bool enemyIsDead;
 
@@ -56,18 +54,22 @@ public class Enemy : MonoBehaviour
 
             hPBar.UpdateBar(currHP, maxHp);
 
-            if (currHP <= 0)
-            {
-                isDead();
-            }
+            isDead();
+           
         }
     }
 
-    void isDead()
+    public bool isDead()
     {
 
-        animator.Play("Dying");
-        Destroy(gameObject, 3);
+        if (currHP <= 0)
+        {
+            animator.Play("Dying");
+            Destroy(gameObject, 3);
+            return true;
+        }
+        else
+            return false;
     }
     private void OnDestroy()
     {
@@ -77,8 +79,10 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         
-        if (enemyIsDead)
+        if (isDead())
         {
+            Debug.Log("Dying");
+
         }
         else if (playerController.isDead)
         {

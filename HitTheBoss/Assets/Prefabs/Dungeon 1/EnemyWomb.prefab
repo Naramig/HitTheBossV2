@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33580defa638b4b93a64db756de6515c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4627576080647681034, guid: 3be9ea026c25b4a4cb3f266833433647, type: 3}
+  enemy: {fileID: 193837545763935703, guid: d3e8ec9ef1e0abe4cae1899aa8a109b3, type: 3}

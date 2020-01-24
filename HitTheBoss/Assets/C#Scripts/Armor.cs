@@ -9,8 +9,8 @@ public class Armor : MonoBehaviour
     public float dmgMod;
     public AudioClip armor;
 
-    //GameObject parent;
-    FloatingText floatingText;
+    
+    NumberSpawner floatingText;
     AudioSource newAudio;
     Animator animator;
     Rigidbody rb;
@@ -25,8 +25,8 @@ public class Armor : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         playerController = FindObjectOfType<Player>();
-        floatingText = FindObjectOfType<FloatingText>();
-        //parent = GetComponentInParent<GameObject>();
+        floatingText = FindObjectOfType<NumberSpawner>();
+        
     }
 
 

@@ -36,11 +36,9 @@ public class MiniMapClicker : MonoBehaviour, IPointerClickHandler
                 Texture tex = GetComponent<RawImage>().texture;
                 Rect r = GetComponent<RawImage>().rectTransform.rect;
 
-                //Using the size of the texture and the local cursor, clamp the X,Y coords between 0 and width - height of texture
                 float coordX = Mathf.Clamp(0, (((localCursor.x - r.x) * tex.width) / r.width), tex.width);
                 float coordY = Mathf.Clamp(0, (((localCursor.y - r.y) * tex.height) / r.height), tex.height);
 
-                //Convert coordX and coordY to % (0.0-1.0) with respect to texture width and height
                 float recalcX = coordX / tex.width;
                 float recalcY = coordY / tex.height;
 

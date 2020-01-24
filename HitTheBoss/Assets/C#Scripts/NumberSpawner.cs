@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloatingText : MonoBehaviour
+public class NumberSpawner : MonoBehaviour
 {
     TextMesh text;
     public GameObject floatingText;

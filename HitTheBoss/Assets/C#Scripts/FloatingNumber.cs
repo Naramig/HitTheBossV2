@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyLilNumber : MonoBehaviour
+public class FloatingNumber : MonoBehaviour
 {
     float flyTimer = 2;
     bool fly;
@@ -16,7 +16,7 @@ public class FlyLilNumber : MonoBehaviour
 
         if (fly)
         {
-            Debug.Log(flyTimer);
+            
             flyTimer -= Time.deltaTime;
             
             transform.position = Vector3.Lerp(transform.position, randomRange, Time.deltaTime);

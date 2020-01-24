@@ -13,11 +13,11 @@ public class Enemy : MonoBehaviour
     public Text gameOverText;
 
     Player playerController;
-    FloatingText floatingText;
+    NumberSpawner floatingText;
 
     bool canUpdate = true;
     float TimerForAttackBar = 2.5f;
-    static float maxTimaerForAttakBar = 2.5f;
+    static float maxTimerForAttakBar = 2.5f;
     bool deadAnimationIsPlayed = false;
     public bool enemyIsDead;
 
@@ -26,22 +26,19 @@ public class Enemy : MonoBehaviour
         enemyIsDead = false;
         animator = GetComponent<Animator>();
         playerController = FindObjectOfType<Player>();
-        floatingText = FindObjectOfType<FloatingText>();
+        floatingText = FindObjectOfType<NumberSpawner>();
     }
 
-    public void DmgToBoss(float AttackValue, AudioSource HitSound, string HitAnimation)
+    public void DmgToBoss(float AttackValue)
     {
         if (!enemyIsDead)
         {
             currHP -= AttackValue;
             floatingText.Spawn(AttackValue);
-            HitSound.Play();
+            
             playerController.attacked = true;
 
-
             hPBar.UpdateBar(currHP, maxHp);
-
-            animator.Play(HitAnimation);
 
             if (currHP <= 0)
             {
@@ -52,13 +49,10 @@ public class Enemy : MonoBehaviour
 
     void isDead()
     {
-
         gameOverText.text = "You Won";
         gameOverText.gameObject.SetActive(true);
         animator.Play("Dying");
         Destroy(gameObject, 3);
-        
-        
     }
     private void OnDestroy()
     {
@@ -81,7 +75,7 @@ public class Enemy : MonoBehaviour
         else if (canUpdate)
         {
             TimerForAttackBar -= Time.deltaTime;
-            attackBar.UpdateBar(TimerForAttackBar, maxTimaerForAttakBar);
+            attackBar.UpdateBar(TimerForAttackBar, maxTimerForAttakBar);
             if (TimerForAttackBar <= 0)
             {
                 canUpdate = false;
@@ -89,10 +83,10 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            this.gameObject.GetComponent<EnemyAttack>().Hit();
+            gameObject.GetComponent<EnemyAttack>().Hit();
             
             canUpdate = true;
-            TimerForAttackBar = maxTimaerForAttakBar;
+            TimerForAttackBar = maxTimerForAttakBar;
             StartCoroutine(CoolDown(0.7f));
         }
         

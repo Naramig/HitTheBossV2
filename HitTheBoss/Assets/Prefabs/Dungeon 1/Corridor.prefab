@@ -502,12 +502,12 @@ PrefabInstance:
     - target: {fileID: 6189350783275262581, guid: a5b4e573d2105440a85ed572fbadb472,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6189350783275262581, guid: a5b4e573d2105440a85ed572fbadb472,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.293
+      value: -0.766
       objectReference: {fileID: 0}
     - target: {fileID: 6189350783275262581, guid: a5b4e573d2105440a85ed572fbadb472,
         type: 3}
@@ -552,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 6424487330775596013, guid: a5b4e573d2105440a85ed572fbadb472,
         type: 3}
       propertyPath: m_Name
-      value: EnemyWomb
+      value: EnemySpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b4e573d2105440a85ed572fbadb472, type: 3}

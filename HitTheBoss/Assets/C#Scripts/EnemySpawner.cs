@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject enemy;
+    Player player;
+
+    private void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "InteractTrigger")
+        {
+            Debug.Log("interact");
+            GameObject newEnemy = Instantiate(enemy,transform.position,Quaternion.LookRotation(-player.transform.position));
+        }
     }
 }

@@ -23,13 +23,13 @@ public class EnemyPart : MonoBehaviour
         float dmg = Mathf.CeilToInt(playerController.attackMod * 2);
 
         enemy.DmgToBoss(dmg);
-        if (!enemy.enemyIsDead)
+        if (!Enemy.enemyIsDead)
         {
             audio.clip = hitAudio;
             animator.Play(animationName);
             audio.Play();
         }
-        Debug.Log("HERE");
+        
 
     }
 

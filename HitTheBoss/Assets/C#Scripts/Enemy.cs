@@ -10,16 +10,17 @@ public class Enemy : MonoBehaviour
     public SimpleHealthBar hPBar;
     public SimpleHealthBar attackBar;
     private Animator animator;
-    public Text gameOverText;
+   
+    public bool canAttack;
 
     Player playerController;
     NumberSpawner floatingText;
-
+    
     bool canUpdate = true;
     float TimerForAttackBar = 2.5f;
     static float maxTimerForAttakBar = 2.5f;
     bool deadAnimationIsPlayed = false;
-    public bool enemyIsDead;
+    public static bool enemyIsDead;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         playerController = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<NumberSpawner>();
+       
     }
 
     public void DmgToBoss(float AttackValue)
@@ -49,8 +51,7 @@ public class Enemy : MonoBehaviour
 
     void isDead()
     {
-        gameOverText.text = "You Won";
-        gameOverText.gameObject.SetActive(true);
+
         animator.Play("Dying");
         Destroy(gameObject, 3);
     }

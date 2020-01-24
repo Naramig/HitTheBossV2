@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         armor = FindObjectOfType<Armor>();
         aIPath = GetComponent<AIPath>();
         aIPath.canMove = false;
-        enemy = FindObjectOfType<Enemy>();
+        //enemy = FindObjectOfType<Enemy>();
         shield = GetComponentInChildren<Shield>();
         miniMapClicker = FindObjectOfType<MiniMapClicker>();
         aIPath.canMove = false;
@@ -87,12 +87,15 @@ public class Player : MonoBehaviour
 
     void CanMove()
     {
-
-        if (enemy.enemyIsDead && !miniMapClicker.mapIsOpen)
+        
+        if (Enemy.enemyIsDead && !miniMapClicker.mapIsOpen)
         {
-
-
+            
             aIPath.canMove = true;
+        }
+        if (!Enemy.enemyIsDead || miniMapClicker.mapIsOpen)
+        {
+            aIPath.canMove = false;
         }
 
     }
@@ -158,6 +161,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Hit();
         AttackBar();
         CanMove();

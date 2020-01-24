@@ -65,6 +65,19 @@ Transform:
   m_Father: {fileID: 7497969673754571479}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &287071521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527977119321757355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33580defa638b4b93a64db756de6515c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4627576080647681034, guid: 3be9ea026c25b4a4cb3f266833433647, type: 3}
 --- !u!1 &6797473807521808580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,6 +2652,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6681048545435249808, guid: 5a27adfd9ba2d47b8873569682a62634,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6976052180382841096, guid: 5a27adfd9ba2d47b8873569682a62634,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3649,6 +3667,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8675530831933909177}
     m_Modifications:
+    - target: {fileID: 3795270003881113463, guid: 5a27adfd9ba2d47b8873569682a62634,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6610458935257340095, guid: 5a27adfd9ba2d47b8873569682a62634,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3658,6 +3681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681048545435249808, guid: 5a27adfd9ba2d47b8873569682a62634,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6976052180382841096, guid: 5a27adfd9ba2d47b8873569682a62634,
         type: 3}
@@ -3719,12 +3747,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corridor (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 937443729265642473, guid: 5a27adfd9ba2d47b8873569682a62634, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a27adfd9ba2d47b8873569682a62634, type: 3}
 --- !u!4 &904612476671296307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6976052180382841096, guid: 5a27adfd9ba2d47b8873569682a62634,
+    type: 3}
+  m_PrefabInstance: {fileID: 7800865942198549051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3527977119321757355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6681048545435249808, guid: 5a27adfd9ba2d47b8873569682a62634,
     type: 3}
   m_PrefabInstance: {fileID: 7800865942198549051}
   m_PrefabAsset: {fileID: 0}

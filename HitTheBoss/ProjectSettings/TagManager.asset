@@ -10,6 +10,7 @@ TagManager:
   - Spear
   - armor
   - Enemy
+  - InteractTrigger
   layers:
   - Default
   - TransparentFX

@@ -20,7 +20,7 @@ public class EnemyPart : MonoBehaviour
     }
     public void DMG()
     {
-        float dmg = Mathf.CeilToInt(playerController.attackMod * 2);
+        float dmg = Mathf.CeilToInt(playerController.attackMod * 3);
 
         enemy.DmgToBoss(dmg);
         if (!enemy.isDead())

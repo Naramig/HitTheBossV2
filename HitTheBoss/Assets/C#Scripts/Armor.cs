@@ -32,7 +32,7 @@ public class Armor : MonoBehaviour
 
     public void DMG()
     {
-        float dmg = Mathf.Clamp(Mathf.CeilToInt(playerController.attackMod * 2) - dmgMod,0,10);
+        float dmg = Mathf.Clamp(Mathf.CeilToInt(playerController.attackMod * 3) - dmgMod,0,10);
 
         newAudio.clip = armor;
         newAudio.Play();

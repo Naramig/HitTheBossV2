@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
     bool counterAttack = false;
     
     bool canUpdate = true;
-    float TimerForAttackBar = 2.5f;
-    static float maxTimerForAttakBar = 2.5f;
+    float TimerForAttackBar = 5f;
+    static float maxTimerForAttakBar = 5f;
     bool deadAnimationIsPlaying = false;
     AnimatorClipInfo[] currentClipInfo;
     Animator m_Animator;

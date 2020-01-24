@@ -166,5 +166,12 @@ public class Player : MonoBehaviour
         AttackBar();
         CanMove();
         OpenCloseMap();
+        if (!isDead)
+        {
+            Hit();
+            AttackBar();
+            CanMove();
+            OpenCloseMap();
+        }
     }
 }

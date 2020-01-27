@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPart : MonoBehaviour
 {
-    new AudioSource audio;
+    AudioSource audio;
     public AudioClip hitAudio;
     public string animationName;
     Enemy enemy;
@@ -22,7 +22,7 @@ public class EnemyPart : MonoBehaviour
     {
         float dmg = Mathf.CeilToInt(playerController.attackMod * 3);
 
-        enemy.DmgToBoss(dmg);
+        enemy.DMG(dmg);
         if (!enemy.isDead())
         {
             audio.clip = hitAudio;

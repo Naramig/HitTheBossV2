@@ -9,24 +9,28 @@ public class Enemy : MonoBehaviour
     public GameObject leftFoot;
     public GameObject leftHand;
     public GameObject sphere;
-    public float currHP = 100;
+    public float currHP;
+    public float maxHp;
     public SimpleHealthBar hPBar;
     public SimpleHealthBar attackBar;
     public static bool enemyIsDead;
-    public bool canAttack;
+    public bool canAttack = true;
+
 
     GameObject temp;
+    GameObject NewSphere;
     Player playerController;
     NumberSpawner floatingText;
     Animator animator;
+
     
 
     
-    string[] animations = {"Attack1", "Attack2", "Attack3", "Attack4", "Attack5", "Attack7" };
+    string[] animations = {"Attack1", "Attack3", "Attack4", "Attack5", "Attack7" };
     bool canUpdate = true;
     float TimerForAttackBar = 5f;
     static float maxTimerForAttakBar = 5f;
-    float maxHp = 100;
+    
     bool counterAttacked = false;
 
     
@@ -38,6 +42,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         playerController = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<NumberSpawner>();
+        //transform.rotation = Quaternion.Inverse(playerController.transform.rotation);
         
     }
 
@@ -47,11 +52,13 @@ public class Enemy : MonoBehaviour
 
         animator.Play("Reaction");
         counterAttacked = true;
-        
+        Destroy(NewSphere);
+        canUpdate = true;
+        canAttack = true;
     }
 
 
-    public void DmgToBoss(float AttackValue)
+    public void DMG(float AttackValue)
     {
         if (!enemyIsDead)
         {
@@ -69,11 +76,9 @@ public class Enemy : MonoBehaviour
 
     public void HitAnimation()
     {
-        int rnd = Random.Range(0, animations.Length - 1);
-            
-            Vector3 positionOfSphere = new Vector3(0, 0, 0);
 
-            
+            int rnd = Random.Range(0, animations.Length - 1);
+
             if (rnd >= 0 && rnd <= 4)
                 temp = rightHand;
             else if (rnd >= 5 && rnd <= 5)
@@ -81,23 +86,28 @@ public class Enemy : MonoBehaviour
             else if (rnd >= 6 && rnd <= 6)
                 temp = leftFoot;
 
-            GameObject NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
+            NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
             NewSphere.transform.SetParent(temp.transform);
             GetComponent<Animator>().Play(animations[rnd]);
-            Destroy(NewSphere, 1);
-        counterAttacked = false;
-        TimerForAttackBar = maxTimerForAttakBar;
-        canUpdate = true;
+            Destroy(NewSphere, animations[rnd].Length);
+            counterAttacked = false;
+            TimerForAttackBar = maxTimerForAttakBar;
+        canAttack = false;
+        
     }
 
-    void Hit()
+
+
+    void SetDMG()
     {
         if (!counterAttacked)
         {
             playerController.SetDMG(15);
-            
-            
+
         }
+        canUpdate = true;
+        Debug.Log(canUpdate);
+        canAttack = true;
     }
 
     public bool isDead()
@@ -112,10 +122,8 @@ public class Enemy : MonoBehaviour
         else
             return false;
     }
-    private void OnDestroy()
-    {
-        enemyIsDead = true;
-    }
+
+
 
     bool DeadAnimation()
     {
@@ -129,7 +137,7 @@ public class Enemy : MonoBehaviour
         attackBar.UpdateBar(TimerForAttackBar, maxTimerForAttakBar);
         if (TimerForAttackBar <= 0)
         {
-            
+            canAttack = true;
             canUpdate = false;
         }
     }
@@ -139,7 +147,7 @@ public class Enemy : MonoBehaviour
        
         if (isDead())
         {
-            Debug.Log("Dying");
+            
 
         }
         else if (playerController.isDead)
@@ -153,7 +161,8 @@ public class Enemy : MonoBehaviour
         {
             AttackBarUpdate();
         }
-        else
+        
+        else if (canAttack)
         {
 
             HitAnimation();
@@ -161,8 +170,13 @@ public class Enemy : MonoBehaviour
         
 
     }
-    
 
-  
+    private void OnDestroy()
+    {
+        enemyIsDead = true;
+    }
+
+
+
 
 }

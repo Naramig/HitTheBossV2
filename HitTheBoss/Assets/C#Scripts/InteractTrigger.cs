@@ -18,7 +18,7 @@ public class InteractTrigger : MonoBehaviour
         
         if (other.tag == "enemy")
         {
-            enemy.canAttack = true;
+            //enemy.canAttack = true;
             
         }
     }

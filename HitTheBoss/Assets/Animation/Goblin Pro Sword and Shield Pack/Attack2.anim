@@ -63516,7 +63516,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.7333333
-    functionName: Hit
+    functionName: SetDMG
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

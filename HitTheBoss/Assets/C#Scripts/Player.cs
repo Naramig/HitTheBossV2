@@ -22,14 +22,12 @@ public class Player : MonoBehaviour
     Spear spear;
     Shield shield;
     Ray ray;
-    Armor armor;
-    Enemy enemy;
     MiniMapClicker miniMapClicker;
     RaycastHit hit;
 
-    float canTapTimer = 1f;
-    float canAttackTimer = 2;
-    float maxAttackValue = 2;
+    float canTapTimer = 0.5f;
+    float canAttackTimer = 1.5f;
+    float maxAttackValue = 1.5f;
     bool canTap = true;
 
 
@@ -38,10 +36,8 @@ public class Player : MonoBehaviour
     {
         
         spear = GetComponentInChildren<Spear>();
-        armor = FindObjectOfType<Armor>();
         aIPath = GetComponent<AIPath>();
         aIPath.canMove = false;
-        //enemy = FindObjectOfType<Enemy>();
         shield = GetComponentInChildren<Shield>();
         miniMapClicker = FindObjectOfType<MiniMapClicker>();
         aIPath.canMove = false;
@@ -72,14 +68,14 @@ public class Player : MonoBehaviour
             attackMod += Time.deltaTime;
             attackBar.UpdateBar(attackMod, maxAttackValue);
 
-            if (attackMod >= 2)
+            if (attackMod >= maxAttackValue)
             {
-                attackMod = 2;
+                attackMod = maxAttackValue;
             }
         }
         if (attacked)
         {
-            canAttackTimer = 2;
+            canAttackTimer = maxAttackValue;
             attacked = false;
             attackMod = 0;
         }
@@ -124,9 +120,6 @@ public class Player : MonoBehaviour
                 Vector3 mouse = Input.mousePosition;
                 ray = cam.ScreenPointToRay(mouse);
 
-
-               
-
                 if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("pickable")))
                 {
                     canTap = false;
@@ -145,6 +138,7 @@ public class Player : MonoBehaviour
                     else if (hit.collider.gameObject.CompareTag("CounterAttackTrigger"))
                     {
                         hit.collider.gameObject.GetComponentInParent<Enemy>().CounterAttack();
+                        
                     }
                 }
             }
@@ -158,7 +152,7 @@ public class Player : MonoBehaviour
             {
                 
                 canTap = true;
-                canTapTimer = 1f;
+                canTapTimer = 0.5f;
             }
             
             

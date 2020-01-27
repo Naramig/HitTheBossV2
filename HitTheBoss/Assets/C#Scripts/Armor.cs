@@ -40,6 +40,7 @@ public class Armor : MonoBehaviour
         floatingText.Spawn(dmg);
         if (currHp <= 0)
         {
+            playerController.attacked = true;
             rb.isKinematic = false;
             transform.SetParent(null);
         }

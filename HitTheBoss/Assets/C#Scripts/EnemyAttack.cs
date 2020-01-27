@@ -29,6 +29,7 @@ public class EnemyAttack : MonoBehaviour
         NewSphere.transform.SetParent(temp.transform);
         GetComponent<Animator>().Play(animations[rnd]);
         Destroy(NewSphere,1);
+
     }
 
 }

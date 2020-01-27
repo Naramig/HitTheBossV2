@@ -5,30 +5,32 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    float maxHp = 100;
+    public GameObject rightHand;
+    public GameObject leftFoot;
+    public GameObject leftHand;
+    public GameObject sphere;
     public float currHP = 100;
     public SimpleHealthBar hPBar;
     public SimpleHealthBar attackBar;
-    private Animator animator;
-    
-   
+    public static bool enemyIsDead;
     public bool canAttack;
 
+    GameObject temp;
     Player playerController;
     NumberSpawner floatingText;
-
-    bool counterAttack = false;
+    Animator animator;
     
+
+    
+    string[] animations = {"Attack1", "Attack2", "Attack3", "Attack4", "Attack5", "Attack7" };
     bool canUpdate = true;
     float TimerForAttackBar = 5f;
     static float maxTimerForAttakBar = 5f;
-    bool deadAnimationIsPlaying = false;
-    AnimatorClipInfo[] currentClipInfo;
-    Animator m_Animator;
+    float maxHp = 100;
+    bool counterAttacked = false;
 
-   
-    bool deadAnimationIsPlayed = false;
-    public static bool enemyIsDead;
+    
+
 
     void Start()
     {
@@ -36,13 +38,19 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         playerController = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<NumberSpawner>();
-       
+        
     }
-    public void CtrAttack()
+
+
+    public void CounterAttack()
     {
-        counterAttack = true;
+
         animator.Play("Reaction");
+        counterAttacked = true;
+        
     }
+
+
     public void DmgToBoss(float AttackValue)
     {
         if (!enemyIsDead)
@@ -56,6 +64,39 @@ public class Enemy : MonoBehaviour
 
             isDead();
            
+        }
+    }
+
+    public void HitAnimation()
+    {
+        int rnd = Random.Range(0, animations.Length - 1);
+            
+            Vector3 positionOfSphere = new Vector3(0, 0, 0);
+
+            
+            if (rnd >= 0 && rnd <= 4)
+                temp = rightHand;
+            else if (rnd >= 5 && rnd <= 5)
+                temp = leftHand;
+            else if (rnd >= 6 && rnd <= 6)
+                temp = leftFoot;
+
+            GameObject NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
+            NewSphere.transform.SetParent(temp.transform);
+            GetComponent<Animator>().Play(animations[rnd]);
+            Destroy(NewSphere, 1);
+        counterAttacked = false;
+        TimerForAttackBar = maxTimerForAttakBar;
+        canUpdate = true;
+    }
+
+    void Hit()
+    {
+        if (!counterAttacked)
+        {
+            playerController.SetDMG(15);
+            
+            
         }
     }
 
@@ -76,9 +117,26 @@ public class Enemy : MonoBehaviour
         enemyIsDead = true;
     }
 
+    bool DeadAnimation()
+    {
+        animator.Play("Won");
+        return true;
+    }
+    void AttackBarUpdate()
+    {
+        TimerForAttackBar -= Time.deltaTime;
+        //
+        attackBar.UpdateBar(TimerForAttackBar, maxTimerForAttakBar);
+        if (TimerForAttackBar <= 0)
+        {
+            
+            canUpdate = false;
+        }
+    }
+
     void FixedUpdate()
     {
-        
+       
         if (isDead())
         {
             Debug.Log("Dying");
@@ -86,45 +144,25 @@ public class Enemy : MonoBehaviour
         }
         else if (playerController.isDead)
         {
-            if (!deadAnimationIsPlaying)
+            if (!DeadAnimation())
             {
-                deadAnimationIsPlaying = true;
-                animator.Play("Won");
-                
+                DeadAnimation();
             }
         }
         else if (canUpdate)
         {
-            TimerForAttackBar -= Time.deltaTime;
-            attackBar.UpdateBar(TimerForAttackBar, maxTimerForAttakBar);
-            if (TimerForAttackBar <= 0)
-            {
-                canUpdate = false;
-            }
+            AttackBarUpdate();
         }
         else
         {
-            gameObject.GetComponent<EnemyAttack>().Hit();
-            canUpdate = true;
-            TimerForAttackBar = maxTimerForAttakBar;
-            //get current animation clip info
-            currentClipInfo = this.animator.GetCurrentAnimatorClipInfo(0);
-            //Access the current length of the clip
-            float currentClipLength = currentClipInfo[0].clip.length;
 
-            StartCoroutine(CoolDown(currentClipLength / 3.0f));
-            counterAttack = false;
+            HitAnimation();
         }
         
 
     }
     
-    IEnumerator CoolDown(float time)
-    {
-        yield return new WaitForSeconds(time);
-        if(!counterAttack)
-            playerController.SetDMG(50);
-    }
+
   
 
 }

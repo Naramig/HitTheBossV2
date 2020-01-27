@@ -27,9 +27,9 @@ public class Player : MonoBehaviour
     MiniMapClicker miniMapClicker;
     RaycastHit hit;
 
-    float canTapTimer = 0.5f;
-    float canAttackTimer = 4;
-    float maxAttackValue = 4;
+    float canTapTimer = 1f;
+    float canAttackTimer = 2;
+    float maxAttackValue = 2;
     bool canTap = true;
 
 
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
     public void SetDMG(float dmg)
     {
-        if (!shield.shielded)
+        //if (!shield.shielded)
         {
             currHp -= dmg;
             healthBar.UpdateBar(currHp,maxHp);
@@ -72,14 +72,14 @@ public class Player : MonoBehaviour
             attackMod += Time.deltaTime;
             attackBar.UpdateBar(attackMod, maxAttackValue);
 
-            if (attackMod >= 4)
+            if (attackMod >= 2)
             {
-                attackMod = 4;
+                attackMod = 2;
             }
         }
         if (attacked)
         {
-            canAttackTimer = 4;
+            canAttackTimer = 2;
             attacked = false;
             attackMod = 0;
         }
@@ -114,10 +114,10 @@ public class Player : MonoBehaviour
 
     void Hit()
     {
-
+        
         if (canTap)
         {
-            canTapTimer -= Time.deltaTime;
+            
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -129,6 +129,7 @@ public class Player : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("pickable")))
                 {
+                    canTap = false;
                     mousePos = hit.point;
                     spear.speared = true;
                     if (hit.collider.gameObject.CompareTag("armor"))
@@ -143,21 +144,24 @@ public class Player : MonoBehaviour
                     }
                     else if (hit.collider.gameObject.CompareTag("CounterAttackTrigger"))
                     {
-                        hit.collider.gameObject.GetComponentInParent<Enemy>().CtrAttack();
+                        hit.collider.gameObject.GetComponentInParent<Enemy>().CounterAttack();
                     }
                 }
             }
 
-            if (canTapTimer <= 0)
-            {
-                canTap = false;
-            }
         }
 
         if (!canTap)
         {
-            canTap = true;
-            canTapTimer = 0.5f;
+            canTapTimer -= Time.deltaTime;
+            if (canTapTimer <= 0)
+            {
+                
+                canTap = true;
+                canTapTimer = 1f;
+            }
+            
+            
         }
         
     }

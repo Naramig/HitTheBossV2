@@ -26,7 +26,7 @@ public class Spear : MonoBehaviour
             canSpearedTimer -= Time.deltaTime;
             if (canSpearedTimer > 0)
             {
-                
+                GetComponentInChildren<Animator>().Play("SpearHit");
                 transform.rotation = Quaternion.LookRotation(player.mousePos - transform.position);
                 transform.position = Vector3.Lerp(transform.position, player.mousePos + new Vector3(0, 0, 0.5f), 0.2f);
             }
@@ -51,7 +51,7 @@ public class Spear : MonoBehaviour
 
     private void Update()
     {
-
+        
         SpearAnimation();
     }
 

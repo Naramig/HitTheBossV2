@@ -15,17 +15,17 @@ public class Enemy : MonoBehaviour
     public SimpleHealthBar attackBar;
     public static bool enemyIsDead;
     public bool canAttack = true;
-    public GameObject head;
+    public Camera mainCamera;
+    public bool attacked = false;
+
 
     GameObject temp;
     GameObject NewSphere;
     Player playerController;
     NumberSpawner floatingText;
     Animator animator;
-
     
 
-    
     string[] animations = {"Attack1", "Attack3", "Attack4", "Attack5", "Attack7" };
     bool canUpdate = true;
     float TimerForAttackBar = 5f;
@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
         floatingText = FindObjectOfType<NumberSpawner>();
         //transform.rotation = Quaternion.Inverse(playerController.transform.rotation);
         
+        
     }
 
 
@@ -55,6 +56,7 @@ public class Enemy : MonoBehaviour
         Destroy(NewSphere);
         canUpdate = true;
         canAttack = true;
+        attacked = false;
     }
 
 
@@ -77,37 +79,40 @@ public class Enemy : MonoBehaviour
     public void HitAnimation()
     {
 
-            int rnd = Random.Range(0, animations.Length - 1);
+        int rnd = Random.Range(0, animations.Length - 1);
 
-            if (rnd >= 0 && rnd <= 4)
-                temp = rightHand;
-            else if (rnd >= 5 && rnd <= 5)
-                temp = leftHand;
-            else if (rnd >= 6 && rnd <= 6)
-                temp = leftFoot;
+        if (rnd >= 0 && rnd <= 4)
+            temp = rightHand;
+        else if (rnd >= 5 && rnd <= 5)
+            temp = leftHand;
+        else if (rnd >= 6 && rnd <= 6)
+            temp = leftFoot;
 
-            NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
-            NewSphere.transform.SetParent(temp.transform);
-            GetComponent<Animator>().Play(animations[rnd]);
-            Destroy(NewSphere, animations[rnd].Length);
-            counterAttacked = false;
-            TimerForAttackBar = maxTimerForAttakBar;
+        NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
+        NewSphere.transform.SetParent(temp.transform);
+        GetComponent<Animator>().Play(animations[rnd]);
+        Destroy(NewSphere, animations[rnd].Length);
+        counterAttacked = false;
+        TimerForAttackBar = maxTimerForAttakBar;
         canAttack = false;
-        
+        attacked = true;
     }
 
 
 
     void SetDMG()
     {
-        if (!counterAttacked)
+        
+        if (!counterAttacked && !playerController.Dodge())
         {
             playerController.SetDMG(15);
-
+            mainCamera.GetComponent<Animator>().Play("Hit");
+            
         }
         canUpdate = true;
-        Debug.Log(canUpdate);
+        Destroy(NewSphere);
         canAttack = true;
+        attacked = false;
     }
 
     public bool isDead()

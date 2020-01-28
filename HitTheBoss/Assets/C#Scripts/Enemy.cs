@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public SimpleHealthBar attackBar;
     public static bool enemyIsDead;
     public bool canAttack = true;
-
+    public GameObject head;
 
     GameObject temp;
     GameObject NewSphere;
@@ -144,7 +144,8 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-       
+        head.transform.LookAt(playerController.transform);
+        head.transform.Rotate(-90.0f, 0.0f, 0.0f);
         if (isDead())
         {
             

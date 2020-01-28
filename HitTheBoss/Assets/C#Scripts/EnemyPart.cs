@@ -15,7 +15,7 @@ public class EnemyPart : MonoBehaviour
     {
         playerController = FindObjectOfType<Player>();
         audio = FindObjectOfType<AudioSource>();
-        enemy = FindObjectOfType<Enemy>();
+        enemy = GetComponentInParent<Enemy>();
         animator = enemy.GetComponent<Animator>();
     }
     public void DMG()

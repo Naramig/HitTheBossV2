@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public bool canAttack = true;
     public Camera mainCamera;
     public bool attacked = false;
-
+    public GameObject head;
 
     GameObject temp;
     GameObject NewSphere;

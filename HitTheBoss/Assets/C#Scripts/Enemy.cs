@@ -17,15 +17,16 @@ public class Enemy : MonoBehaviour
     public bool canAttack = true;
     public Camera mainCamera;
     public bool attacked = false;
-    public GameObject head;
+    public AudioClip[] audioClip;
+
 
     GameObject temp;
     GameObject NewSphere;
     Player playerController;
     NumberSpawner floatingText;
     Animator animator;
-    
 
+    int rnd;
     string[] animations = {"Attack1", "Attack3", "Attack4", "Attack5", "Attack7" };
     bool canUpdate = true;
     float TimerForAttackBar = 5f;
@@ -65,6 +66,7 @@ public class Enemy : MonoBehaviour
         if (!enemyIsDead)
         {
             currHP -= AttackValue;
+            GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[0]);
             floatingText.Spawn(AttackValue);
             
             playerController.attacked = true;
@@ -78,8 +80,8 @@ public class Enemy : MonoBehaviour
 
     public void HitAnimation()
     {
-
-        int rnd = Random.Range(0, animations.Length - 1);
+        
+        rnd = Random.Range(0, animations.Length - 1);
 
         if (rnd >= 0 && rnd <= 4)
             temp = rightHand;
@@ -107,7 +109,7 @@ public class Enemy : MonoBehaviour
         {
             playerController.SetDMG(15);
             mainCamera.GetComponent<Animator>().Play("Hit");
-            
+            GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[1]);
         }
         canUpdate = true;
         Destroy(NewSphere);
@@ -132,6 +134,7 @@ public class Enemy : MonoBehaviour
 
     bool DeadAnimation()
     {
+        GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[2]);
         animator.Play("Won");
         return true;
     }
@@ -149,8 +152,8 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        head.transform.LookAt(playerController.transform);
-        head.transform.Rotate(-90.0f, 0.0f, 0.0f);
+
+
         if (isDead())
         {
             

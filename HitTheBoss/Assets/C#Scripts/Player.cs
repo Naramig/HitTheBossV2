@@ -67,12 +67,12 @@ public class Player : MonoBehaviour
         if (chanse>=Random.Range(0f, 100f))
         {
             spear.GetComponentInChildren<Animator>().Play("Dodge");
-            Debug.Log("Dodge");
+            
             return true;
         }
         else
         {
-            Debug.Log("!Dodge");
+            
             return false;
         }
     }

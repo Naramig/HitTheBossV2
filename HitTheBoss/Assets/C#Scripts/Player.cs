@@ -20,11 +20,11 @@ public class Player : MonoBehaviour
 
     AIPath aIPath;
     Spear spear;
-    Shield shield;
+    //Shield shield;
     
     MiniMapClicker miniMapClicker;
     RaycastHit hit;
-    Enemy enemy;
+
    
 
     float canTapTimer = 0.5f;
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         spear = GetComponentInChildren<Spear>();
         aIPath = GetComponent<AIPath>();
         aIPath.canMove = false;
-        shield = GetComponentInChildren<Shield>();
+        //shield = GetComponentInChildren<Shield>();
         miniMapClicker = FindObjectOfType<MiniMapClicker>();
         aIPath.canMove = false;
     }
@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
         if (!Enemy.enemyIsDead || miniMapClicker.mapIsOpen)
         {
             aIPath.canMove = false;
-            //mainCamera.GetComponent<Animator>().Play("New State");
+            
         }
 
     }

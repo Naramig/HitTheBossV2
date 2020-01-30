@@ -34,8 +34,8 @@ public class LipsingToBlendShape : MonoBehaviour
 		val = rng * ssVolume.intensity * motionScale + rangeMinimum;
 		//mouth.localPosition = val;
         valueAudio = val;
-		GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(1, Mathf.Abs(valueAudio.y * 500));
-		GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, Mathf.Abs(valueAudio.y * 500));
+		GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(1, Mathf.Abs(valueAudio.y * 300));
+		GetComponent<SkinnedMeshRenderer>().SetBlendShapeWeight(0, Mathf.Abs(valueAudio.y * 300));
 
 
     }

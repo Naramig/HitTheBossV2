@@ -38,7 +38,7 @@ public class Armor : MonoBehaviour
         newAudio.Play();
         currHp -= dmg;
         floatingText.Spawn(dmg);
-        if (currHp <= 0)
+        if (currHp <= 0 || playerController.attackMod == playerController.maxAttackValue)
         {
             playerController.attacked = true;
             rb.isKinematic = false;

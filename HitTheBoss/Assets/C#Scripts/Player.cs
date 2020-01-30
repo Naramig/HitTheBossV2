@@ -24,12 +24,12 @@ public class Player : MonoBehaviour
     
     MiniMapClicker miniMapClicker;
     RaycastHit hit;
-
+    
    
 
     float canTapTimer = 0.5f;
     float canAttackTimer = 1.5f;
-    float maxAttackValue = 1.5f;
+    public float maxAttackValue = 1.5f;
     bool canTap = true;
 
 
@@ -88,6 +88,8 @@ public class Player : MonoBehaviour
             if (attackMod >= maxAttackValue)
             {
                 attackMod = maxAttackValue;
+                attackBar.colorMode = SimpleHealthBar.ColorMode.Single;
+                attackBar.UpdateColor(Color.yellow);
             }
         }
         if (attacked)
@@ -95,6 +97,7 @@ public class Player : MonoBehaviour
             canAttackTimer = maxAttackValue;
             attacked = false;
             attackMod = 0;
+            attackBar.colorMode = SimpleHealthBar.ColorMode.Gradient;
         }
     }
 
@@ -191,5 +194,6 @@ public class Player : MonoBehaviour
             CanMove();
             OpenCloseMap();
         }
+
     }
 }

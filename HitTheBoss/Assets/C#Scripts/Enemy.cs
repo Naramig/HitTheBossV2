@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Timers;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class Enemy : MonoBehaviour
     public Camera mainCamera;
     public bool attacked = false;
     public AudioClip[] audioClip;
-
 
     GameObject temp;
     GameObject NewSphere;
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 
 
     void Start()
-    {
+    {       
         enemyIsDead = false;
         animator = GetComponent<Animator>();
         playerController = FindObjectOfType<Player>();
@@ -124,6 +124,7 @@ public class Enemy : MonoBehaviour
         {
             animator.Play("Dying");
             Destroy(gameObject, 3);
+            
             return true;
         }
         else
@@ -134,9 +135,11 @@ public class Enemy : MonoBehaviour
 
     bool DeadAnimation()
     {
-        GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[2]);
-        animator.Play("Won");
-        return true;
+
+            GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[2]);
+            animator.Play("Won");
+            return true;
+            
     }
     void AttackBarUpdate()
     {
@@ -150,9 +153,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+    void Jump()
+    {
+        if (Mathf.CeilToInt(Time.timeSinceLevelLoad) % 5 != 0) return;
+        animator.Play("Jump");
+    }
+
+
+
     void FixedUpdate()
     {
-
+        Jump();
 
         if (isDead())
         {
@@ -161,10 +173,10 @@ public class Enemy : MonoBehaviour
         }
         else if (playerController.isDead)
         {
-            if (!DeadAnimation())
-            {
-                DeadAnimation();
-            }
+        if (!DeadAnimation())
+            DeadAnimation();
+
+            
         }
         else if (canUpdate)
         {
@@ -183,6 +195,7 @@ public class Enemy : MonoBehaviour
     private void OnDestroy()
     {
         enemyIsDead = true;
+        
     }
 
 

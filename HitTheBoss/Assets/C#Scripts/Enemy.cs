@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
         GetComponent<Animator>().Play(animations[rnd]);
         Destroy(NewSphere, animations[rnd].Length);
         counterAttacked = false;
-        TimerForAttackBar = maxTimerForAttakBar;
+        
         canAttack = false;
         attacked = true;
     }
@@ -115,6 +115,7 @@ public class Enemy : MonoBehaviour
         Destroy(NewSphere);
         canAttack = true;
         attacked = false;
+        TimerForAttackBar = maxTimerForAttakBar;
     }
 
     public bool isDead()
@@ -144,7 +145,7 @@ public class Enemy : MonoBehaviour
     void AttackBarUpdate()
     {
         TimerForAttackBar -= Time.deltaTime;
-        //
+        
         attackBar.UpdateBar(TimerForAttackBar, maxTimerForAttakBar);
         if (TimerForAttackBar <= 0)
         {
@@ -156,8 +157,15 @@ public class Enemy : MonoBehaviour
 
     void Jump()
     {
-        if (Mathf.CeilToInt(Time.timeSinceLevelLoad) % 5 != 0) return;
-        animator.Play("Jump");
+        float chance = 50f;
+        if (System.Math.Round(Time.timeSinceLevelLoad, 2) % 5 == 0 && chance >= Random.Range(0f, 100f))
+        {
+            counterAttacked = false;
+            canUpdate = false;
+            canAttack = false;
+            attacked = true;
+            animator.Play("JumpBack");
+        }
     }
 
 

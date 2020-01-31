@@ -2329,7 +2329,6 @@ MonoBehaviour:
   hPBar: {fileID: 19105753}
   attackBar: {fileID: 338260615}
   canAttack: 1
-  mainCamera: {fileID: 0}
   attacked: 0
   audioClip:
   - {fileID: 8300000, guid: dcd008f94da6d479195aabe3f85d5d92, type: 3}

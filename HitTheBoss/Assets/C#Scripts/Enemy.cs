@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public SimpleHealthBar attackBar;
     public static bool enemyIsDead;
     public bool canAttack = true;
-    public Camera mainCamera;
+    //public Camera mainCamera;
     public bool attacked = false;
     public AudioClip[] audioClip;
 
@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
         if (!counterAttacked && !playerController.Dodge())
         {
             playerController.SetDMG(15);
-            mainCamera.GetComponent<Animator>().Play("Hit");
+            playerController.GetComponentInChildren<Camera>().GetComponent<Animator>().Play("Hit");
             GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[1]);
         }
         canUpdate = true;

@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public static bool enemyIsDead;
     public bool canAttack = true;
     //public Camera mainCamera;
-    public bool attacked = false;
+    public bool attacked = true;
     public AudioClip[] audioClip;
 
     GameObject temp;
@@ -44,8 +44,6 @@ public class Enemy : MonoBehaviour
         playerController = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<NumberSpawner>();
         //transform.rotation = Quaternion.Inverse(playerController.transform.rotation);
-        
-        
     }
 
 
@@ -57,7 +55,7 @@ public class Enemy : MonoBehaviour
         Destroy(NewSphere);
         canUpdate = true;
         canAttack = true;
-        attacked = false;
+        attacked = true;
     }
 
 
@@ -72,9 +70,14 @@ public class Enemy : MonoBehaviour
             playerController.attacked = true;
 
             hPBar.UpdateBar(currHP, maxHp);
-
             isDead();
-           
+
+            attacked = true;
+            canUpdate = true;
+            TimerForAttackBar = maxTimerForAttakBar;
+
+
+
         }
     }
 
@@ -96,7 +99,7 @@ public class Enemy : MonoBehaviour
         Destroy(NewSphere, animator.GetCurrentAnimatorClipInfo(0).Length + animator.GetNextAnimatorClipInfo(0).Length);
         counterAttacked = false;
         canAttack = false;
-        attacked = true;
+        attacked = false;
     }
 
 
@@ -113,7 +116,7 @@ public class Enemy : MonoBehaviour
         canUpdate = true;
         Destroy(NewSphere);
         canAttack = true;
-        attacked = false;
+        attacked = true;
         TimerForAttackBar = maxTimerForAttakBar;
     }
 
@@ -153,7 +156,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    /*
     void Jump()
     {
         float chance = 50f;
@@ -166,12 +169,13 @@ public class Enemy : MonoBehaviour
             animator.Play("JumpBack");
         }
     }
+    */
 
 
 
     void FixedUpdate()
     {
-        Jump();
+        //Jump();
 
         if (isDead())
         {
@@ -195,8 +199,8 @@ public class Enemy : MonoBehaviour
 
             HitAnimation();
         }
-        
 
+        Debug.Log("attacked " + attacked);
     }
 
     private void OnDestroy()

@@ -80,8 +80,8 @@ public class Enemy : MonoBehaviour
 
     public void HitAnimation()
     {
-        
-        rnd = Random.Range(0, animations.Length - 1);
+        animator.SetFloat("AttackRange", Random.Range(0, 4));
+        rnd = (int)Mathf.Round(animator.GetFloat("AttackRange"));
 
         if (rnd >= 0 && rnd <= 4)
             temp = rightHand;
@@ -92,10 +92,9 @@ public class Enemy : MonoBehaviour
 
         NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
         NewSphere.transform.SetParent(temp.transform);
-        GetComponent<Animator>().Play(animations[rnd]);
-        Destroy(NewSphere, animations[rnd].Length);
+        animator.Play("JumpForward");
+        Destroy(NewSphere, animator.GetCurrentAnimatorClipInfo(0).Length + animator.GetNextAnimatorClipInfo(0).Length);
         counterAttacked = false;
-        
         canAttack = false;
         attacked = true;
     }

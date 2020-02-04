@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     
     MiniMapClicker miniMapClicker;
     RaycastHit hit;
-    
+    PlayerController playerController;
    
 
     float canTapTimer = 0.5f;
@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
         //shield = GetComponentInChildren<Shield>();
         miniMapClicker = FindObjectOfType<MiniMapClicker>();
         aIPath.canMove = false;
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     public void SetDMG(float dmg)
@@ -66,10 +67,9 @@ public class Player : MonoBehaviour
     public bool Dodge()
     {
         float chance = 50;
-        if (chance >= Random.Range(0f, 100f))
+        if (chance >= Random.Range(0f, 100f) && playerController.canAttack)
         {
             spear.GetComponentInChildren<Animator>().Play("Dodge");
-            
             return true;
         }
         else
@@ -132,6 +132,7 @@ public class Player : MonoBehaviour
             map.SetActive(false);
         }
     }
+
     /*
     void FindEnemy()
     {
@@ -146,51 +147,7 @@ public class Player : MonoBehaviour
     void Hit()
     {
         
-        if (canTap)
-        {
-            
-            if (Input.GetMouseButtonDown(0))
-            {
-                Vector3 mouse = Input.mousePosition;
-                Ray ray = mainCamera.ScreenPointToRay(mouse);
 
-                if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("pickable")))
-                {
-                    canTap = false;
-                    mousePos = hit.point;
-                    spear.speared = true;
-                    if (hit.collider.gameObject.CompareTag("armor") && !FindObjectOfType<Enemy>().attacked)
-                    {
-
-                        hit.collider.gameObject.GetComponent<Armor>().DMG();
-                    }
-                    else if (hit.collider.gameObject.CompareTag("Enemy") && !FindObjectOfType<Enemy>().attacked)
-                    {
-                        hit.collider.gameObject.GetComponent<EnemyPart>().DMG();
-
-                    }
-                    else if (hit.collider.gameObject.CompareTag("CounterAttackTrigger"))
-                    {
-                        hit.collider.gameObject.GetComponentInParent<Enemy>().CounterAttack();
-                        
-                    }
-                }
-            }
-
-        }
-
-        if (!canTap)
-        {
-            canTapTimer -= Time.deltaTime;
-            if (canTapTimer <= 0)
-            {
-                
-                canTap = true;
-                canTapTimer = 0.5f;
-            }
-            
-            
-        }
         
     }
 
@@ -201,7 +158,7 @@ public class Player : MonoBehaviour
         if (!isDead)
         {
             //FindEnemy();
-            Hit();
+            
             AttackBar();
             CanMove();
             OpenCloseMap();

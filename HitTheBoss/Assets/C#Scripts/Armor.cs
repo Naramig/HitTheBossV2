@@ -16,7 +16,7 @@ public class Armor : MonoBehaviour
     Rigidbody rb;
 
 
-    Player playerController;
+    Player  playerController;
 
 
     private void Start()

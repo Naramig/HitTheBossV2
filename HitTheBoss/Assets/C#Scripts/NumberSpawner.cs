@@ -6,14 +6,14 @@ public class NumberSpawner : MonoBehaviour
 {
     TextMesh text;
     public GameObject floatingText;
-    
-    Player playerController;
+
+    PlayerController playerController;
 
     void Start()
     {
         
         text = floatingText.GetComponent<TextMesh>();
-        playerController = FindObjectOfType<Player>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     public void Spawn(float dmg/*, GameObject parent*/)

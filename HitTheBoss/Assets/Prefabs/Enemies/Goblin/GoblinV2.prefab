@@ -1869,7 +1869,7 @@ GameObject:
   - component: {fileID: 8783441244567126219}
   m_Layer: 8
   m_Name: GoblinV2
-  m_TagString: Enemy
+  m_TagString: Goblin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1936,6 +1936,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dcd008f94da6d479195aabe3f85d5d92, type: 3}
   - {fileID: 8300000, guid: e3c30692e1bfa467d9a68ee40c8c88f0, type: 3}
   - {fileID: 8300000, guid: 8a5d08c1a43044ac395eb85076006f55, type: 3}
+  canUpdate: 1
+  isTriggered: 0
 --- !u!114 &8783441244567126219
 MonoBehaviour:
   m_ObjectHideFlags: 0

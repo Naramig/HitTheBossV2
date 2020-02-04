@@ -12,7 +12,7 @@ public class MiniMapClicker : MonoBehaviour, IPointerClickHandler
     public RaycastHit miniMapHit;
     public bool mapIsOpen;
 
-    Player player;
+    Player  player;
 
     private void Start()
     {

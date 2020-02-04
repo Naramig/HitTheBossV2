@@ -22,26 +22,28 @@ public class Enemy : MonoBehaviour
 
     GameObject temp;
     GameObject NewSphere;
-    Player playerController;
+    Player player;
     NumberSpawner floatingText;
     Animator animator;
 
     int rnd;
     string[] animations = {"Attack1", "Attack3", "Attack4", "Attack5", "Attack7" };
     public bool canUpdate = true;
-    float TimerForAttackBar = 5f;
-    static float maxTimerForAttakBar = 5f;
+    float TimerForAttackBar = 2.5f;
+    static float maxTimerForAttakBar = 2.5f;
     
     bool counterAttacked = false;
 
-    
+
+
+    public bool isTriggered;
 
 
     void Start()
     {       
         enemyIsDead = false;
         animator = GetComponent<Animator>();
-        playerController = FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<NumberSpawner>();
         //transform.rotation = Quaternion.Inverse(playerController.transform.rotation);
     }
@@ -67,7 +69,7 @@ public class Enemy : MonoBehaviour
             GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[0]);
             floatingText.Spawn(AttackValue);
             
-            playerController.attacked = true;
+            player.attacked = true;
 
             hPBar.UpdateBar(currHP, maxHp);
             isDead();
@@ -83,6 +85,7 @@ public class Enemy : MonoBehaviour
 
     public void HitAnimation()
     {
+
         animator.SetFloat("AttackRange", Random.Range(0, 4));
         rnd = (int)Mathf.Round(animator.GetFloat("AttackRange"));
 
@@ -107,10 +110,10 @@ public class Enemy : MonoBehaviour
     void SetDMG()
     {
         
-        if (!counterAttacked && !playerController.Dodge())
+        if (!counterAttacked && !player.Dodge() && isTriggered)
         {
-            playerController.SetDMG(15);
-            playerController.GetComponentInChildren<Camera>().GetComponent<Animator>().Play("Hit");
+            player.SetDMG(15);
+            player.GetComponentInChildren<Camera>().GetComponent<Animator>().Play("Hit");
             GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[1]);
         }
         canUpdate = true;
@@ -149,11 +152,11 @@ public class Enemy : MonoBehaviour
         TimerForAttackBar -= Time.deltaTime;
         
         attackBar.UpdateBar(TimerForAttackBar, maxTimerForAttakBar);
-        if (TimerForAttackBar <= 0)
+        if (TimerForAttackBar <= 0 && isTriggered)
         {
             canAttack = true;
             canUpdate = false;
-            animator.SetTrigger("JumpForward");
+            //animator.SetTrigger("JumpForward");
         }
     }
 
@@ -183,7 +186,7 @@ public class Enemy : MonoBehaviour
             
 
         }
-        else if (playerController.isDead)
+        else if (player.isDead)
         {
         if (!DeadAnimation())
             DeadAnimation();

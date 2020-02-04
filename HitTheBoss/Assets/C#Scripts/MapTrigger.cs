@@ -7,11 +7,11 @@ public class MapTrigger : MonoBehaviour
 {
     
     MiniMapClicker miniMapClicker;
-    Player playerController;
+    Player  player;
 
     private void Start()
     {
-        playerController = FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
         
         miniMapClicker = FindObjectOfType<MiniMapClicker>();
     }
@@ -21,7 +21,7 @@ public class MapTrigger : MonoBehaviour
         
         if (other.gameObject.tag == "Player")
         {
-            playerController.GetComponent<AIPath>().canMove = false;
+            player.GetComponent<AIPath>().canMove = false;
             miniMapClicker.mapIsOpen = true;
         }
     }

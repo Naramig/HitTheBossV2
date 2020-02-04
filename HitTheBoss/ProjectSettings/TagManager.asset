@@ -11,6 +11,8 @@ TagManager:
   - armor
   - Enemy
   - InteractTrigger
+  - AttackTrigger
+  - Goblin
   layers:
   - Default
   - TransparentFX

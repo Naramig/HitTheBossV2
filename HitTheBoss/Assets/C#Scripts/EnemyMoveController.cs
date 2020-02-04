@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class EnemyMoveController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    void moveOn()
     {
-        
+        transform.position -= new Vector3(0,0,1.5f);
+       
+    }
+    void moveOff()
+    {
+        Debug.Log("move");
+        transform.position += new Vector3(0, 0, 1.5f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

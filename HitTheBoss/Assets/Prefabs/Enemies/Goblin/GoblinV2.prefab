@@ -914,7 +914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2477446853508322979}
   m_LocalRotation: {x: 0.00000019397248, y: 0.000024561255, z: 0.0000319029, w: 1}
-  m_LocalPosition: {x: -0.000004920208, y: 0.12143859, z: -0.0003430937}
+  m_LocalPosition: {x: -0.000004920208, y: 0.12143859, z: 0.036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 928347336381500958}
@@ -1866,6 +1866,7 @@ GameObject:
   - component: {fileID: 8563717076018950257}
   - component: {fileID: 1752582567763827979}
   - component: {fileID: 648812165911685358}
+  - component: {fileID: 8783441244567126219}
   m_Layer: 8
   m_Name: GoblinV2
   m_TagString: Enemy
@@ -1901,7 +1902,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 32f5d2794d115774db405e711be052e0, type: 3}
   m_Controller: {fileID: 9100000, guid: 051527549c7904b408bfb126a170c176, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1935,6 +1936,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dcd008f94da6d479195aabe3f85d5d92, type: 3}
   - {fileID: 8300000, guid: e3c30692e1bfa467d9a68ee40c8c88f0, type: 3}
   - {fileID: 8300000, guid: 8a5d08c1a43044ac395eb85076006f55, type: 3}
+--- !u!114 &8783441244567126219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648619258494354018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f567dca2591df40268996ce5dae7658d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4664181452815054343
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     int rnd;
     string[] animations = {"Attack1", "Attack3", "Attack4", "Attack5", "Attack7" };
-    bool canUpdate = true;
+    public bool canUpdate = true;
     float TimerForAttackBar = 5f;
     static float maxTimerForAttakBar = 5f;
     
@@ -75,7 +75,8 @@ public class Enemy : MonoBehaviour
             attacked = true;
             canUpdate = true;
             TimerForAttackBar = maxTimerForAttakBar;
-
+            //GetComponent<Jump>().StopJumpForward();
+            //animator.Play("JumpBack");
 
 
         }
@@ -95,7 +96,7 @@ public class Enemy : MonoBehaviour
 
         NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
         NewSphere.transform.SetParent(temp.transform);
-        animator.Play("JumpForward");
+        //animator.Play("JumpForward");
         Destroy(NewSphere, animator.GetCurrentAnimatorClipInfo(0).Length + animator.GetNextAnimatorClipInfo(0).Length);
         counterAttacked = false;
         canAttack = false;
@@ -139,9 +140,9 @@ public class Enemy : MonoBehaviour
     bool DeadAnimation()
     {
 
-            GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[2]);
-            animator.Play("Won");
-            return true;
+         GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[2]);
+         animator.Play("Won");
+         return true;
             
     }
     void AttackBarUpdate()
@@ -153,6 +154,7 @@ public class Enemy : MonoBehaviour
         {
             canAttack = true;
             canUpdate = false;
+            animator.SetTrigger("JumpForward");
         }
     }
 
@@ -199,8 +201,9 @@ public class Enemy : MonoBehaviour
 
             HitAnimation();
         }
+        
 
-        Debug.Log("attacked " + attacked);
+       // Debug.Log("attacked " + attacked);
     }
 
     private void OnDestroy()

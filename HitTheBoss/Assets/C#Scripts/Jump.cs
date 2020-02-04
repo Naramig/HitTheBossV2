@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    /*
+    
     Vector3 startPos;
     Vector3 endPos;
     bool canMoveForward;
     bool canMoveBack;
+    Enemy enemy;
+
+    private void Start()
+    {
+        enemy = GetComponent<Enemy>();
+    }
 
     void StartJumpBack()
     {
@@ -24,26 +30,27 @@ public class Jump : MonoBehaviour
 
     void StartJumpForward()
     {
+        Debug.Log("startFRWRD");
         transform.position = endPos;
         canMoveForward = true;
     }
-    void StopJumpForward()
+    public void StopJumpForward()
     {
         Debug.Log("stopFRWRD");
-        transform.position = startPos;
+        //transform.position = startPos;
         canMoveForward = false;
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (canMoveForward)
         {
-            transform.position += new Vector3(0, 0, 0.04f);
+            transform.position += new Vector3(0, 0, 0.07f);
         }
         if (canMoveBack)
         {
-            transform.position -= new Vector3(0, 0, 0.04f);
+            transform.position -= new Vector3(0, 0, 0.07f);
         }
-    }*/
+    }
 }

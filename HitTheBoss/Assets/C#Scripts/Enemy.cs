@@ -16,8 +16,8 @@ public class Enemy : MonoBehaviour
     public SimpleHealthBar attackBar;
     public static bool enemyIsDead;
     public bool canAttack = true;
-    public Camera mainCamera;
-    public bool attacked = false;
+    //public Camera mainCamera;
+    public bool attacked = true;
     public AudioClip[] audioClip;
 
     GameObject temp;
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     int rnd;
     string[] animations = {"Attack1", "Attack3", "Attack4", "Attack5", "Attack7" };
-    bool canUpdate = true;
+    public bool canUpdate = true;
     float TimerForAttackBar = 5f;
     static float maxTimerForAttakBar = 5f;
     
@@ -44,8 +44,6 @@ public class Enemy : MonoBehaviour
         playerController = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<NumberSpawner>();
         //transform.rotation = Quaternion.Inverse(playerController.transform.rotation);
-        
-        
     }
 
 
@@ -57,7 +55,7 @@ public class Enemy : MonoBehaviour
         Destroy(NewSphere);
         canUpdate = true;
         canAttack = true;
-        attacked = false;
+        attacked = true;
     }
 
 
@@ -72,16 +70,22 @@ public class Enemy : MonoBehaviour
             playerController.attacked = true;
 
             hPBar.UpdateBar(currHP, maxHp);
-
             isDead();
-           
+
+            attacked = true;
+            canUpdate = true;
+            TimerForAttackBar = maxTimerForAttakBar;
+            //GetComponent<Jump>().StopJumpForward();
+            //animator.Play("JumpBack");
+
+
         }
     }
 
     public void HitAnimation()
     {
-        
-        rnd = Random.Range(0, animations.Length - 1);
+        animator.SetFloat("AttackRange", Random.Range(0, 4));
+        rnd = (int)Mathf.Round(animator.GetFloat("AttackRange"));
 
         if (rnd >= 0 && rnd <= 4)
             temp = rightHand;
@@ -92,12 +96,11 @@ public class Enemy : MonoBehaviour
 
         NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
         NewSphere.transform.SetParent(temp.transform);
-        GetComponent<Animator>().Play(animations[rnd]);
-        Destroy(NewSphere, animations[rnd].Length);
+        //animator.Play("JumpForward");
+        Destroy(NewSphere, animator.GetCurrentAnimatorClipInfo(0).Length + animator.GetNextAnimatorClipInfo(0).Length);
         counterAttacked = false;
-        TimerForAttackBar = maxTimerForAttakBar;
         canAttack = false;
-        attacked = true;
+        attacked = false;
     }
 
 
@@ -108,13 +111,14 @@ public class Enemy : MonoBehaviour
         if (!counterAttacked && !playerController.Dodge())
         {
             playerController.SetDMG(15);
-            mainCamera.GetComponent<Animator>().Play("Hit");
+            playerController.GetComponentInChildren<Camera>().GetComponent<Animator>().Play("Hit");
             GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[1]);
         }
         canUpdate = true;
         Destroy(NewSphere);
         canAttack = true;
-        attacked = false;
+        attacked = true;
+        TimerForAttackBar = maxTimerForAttakBar;
     }
 
     public bool isDead()
@@ -136,35 +140,44 @@ public class Enemy : MonoBehaviour
     bool DeadAnimation()
     {
 
-            GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[2]);
-            animator.Play("Won");
-            return true;
+         GetComponentInChildren<AudioSource>().PlayOneShot(audioClip[2]);
+         animator.Play("Won");
+         return true;
             
     }
     void AttackBarUpdate()
     {
         TimerForAttackBar -= Time.deltaTime;
-        //
+        
         attackBar.UpdateBar(TimerForAttackBar, maxTimerForAttakBar);
         if (TimerForAttackBar <= 0)
         {
             canAttack = true;
             canUpdate = false;
+            animator.SetTrigger("JumpForward");
         }
     }
 
-
+    /*
     void Jump()
     {
-        if (Mathf.CeilToInt(Time.timeSinceLevelLoad) % 5 != 0) return;
-        animator.Play("Jump");
+        float chance = 50f;
+        if (System.Math.Round(Time.timeSinceLevelLoad, 2) % 5 == 0 && chance >= Random.Range(0f, 100f))
+        {
+            counterAttacked = false;
+            canUpdate = false;
+            canAttack = false;
+            attacked = true;
+            animator.Play("JumpBack");
+        }
     }
+    */
 
 
 
     void FixedUpdate()
     {
-        Jump();
+        //Jump();
 
         if (isDead())
         {
@@ -190,6 +203,7 @@ public class Enemy : MonoBehaviour
         }
         
 
+       // Debug.Log("attacked " + attacked);
     }
 
     private void OnDestroy()

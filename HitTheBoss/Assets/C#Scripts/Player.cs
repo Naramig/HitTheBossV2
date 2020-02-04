@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public SimpleHealthBar healthBar;
     public Text gameOverText;
     public GameObject map;
+    //public GameObject enemy;
+
 
     AIPath aIPath;
     Spear spear;
@@ -63,8 +65,8 @@ public class Player : MonoBehaviour
     }
     public bool Dodge()
     {
-        float chanse = 50;
-        if (chanse>=Random.Range(0f, 100f))
+        float chance = 50;
+        if (chance >= Random.Range(0f, 100f))
         {
             spear.GetComponentInChildren<Animator>().Play("Dodge");
             
@@ -130,6 +132,16 @@ public class Player : MonoBehaviour
             map.SetActive(false);
         }
     }
+    /*
+    void FindEnemy()
+    {
+        if (Enemy.enemyIsDead)
+        {
+            enemy = FindObjectOfType<Enemy>().gameObject;
+        }
+    }
+    */
+
 
     void Hit()
     {
@@ -137,7 +149,6 @@ public class Player : MonoBehaviour
         if (canTap)
         {
             
-
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mouse = Input.mousePosition;
@@ -189,10 +200,12 @@ public class Player : MonoBehaviour
         
         if (!isDead)
         {
+            //FindEnemy();
             Hit();
             AttackBar();
             CanMove();
             OpenCloseMap();
+            
         }
 
     }

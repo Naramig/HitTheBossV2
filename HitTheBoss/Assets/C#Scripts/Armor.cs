@@ -38,9 +38,10 @@ public class Armor : MonoBehaviour
         newAudio.Play();
         currHp -= dmg;
         floatingText.Spawn(dmg);
+        playerController.attacked = true;
         if (currHp <= 0 || playerController.attackMod == playerController.maxAttackValue)
         {
-            playerController.attacked = true;
+            
             rb.isKinematic = false;
             transform.SetParent(null);
         }
@@ -48,7 +49,7 @@ public class Armor : MonoBehaviour
         else if (currHp > 0)
         {
          //   animator.Play("Vibration");
-            playerController.attacked = true;
+            
         }
     }
 

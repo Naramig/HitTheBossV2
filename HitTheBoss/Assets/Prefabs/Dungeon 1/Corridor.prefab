@@ -197,7 +197,6 @@ GameObject:
   - component: {fileID: 6976052180001513375}
   - component: {fileID: 6976052180001513373}
   - component: {fileID: 6976052180001513374}
-  - component: {fileID: 4975122249824154223}
   m_Layer: 9
   m_Name: Corridor
   m_TagString: Untagged
@@ -267,19 +266,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4975122249824154223
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6976052180001513360}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1811557, y: 1.181156, z: 0.115592964}
-  m_Center: {x: -0.0000010325209, y: -0.0000006101257, z: 0.03648104}
 --- !u!1 &6976052180053057104
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +553,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424487330775596013, guid: a5b4e573d2105440a85ed572fbadb472,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424487330775596013, guid: a5b4e573d2105440a85ed572fbadb472,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b4e573d2105440a85ed572fbadb472, type: 3}

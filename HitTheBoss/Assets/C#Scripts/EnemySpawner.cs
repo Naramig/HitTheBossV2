@@ -23,12 +23,9 @@ public class EnemySpawner : MonoBehaviour
     */
     private void FixedUpdate()
     {
-        if (Enemy.enemyIsDead)
-        {
-            Enemy.enemyIsDead = false;
-            //  enemyScript = FindObjectOfType<Enemy>();
-            Debug.Log(enemy.transform.position);
-            enemy = Instantiate(enemy,enemy.transform.position,Quaternion.identity);
-        }
+        if (!Enemy.enemyIsDead) return;
+        
+        Enemy.enemyIsDead = false;
+        Instantiate(enemy, enemy.transform.position, Quaternion.identity);
     }
 }

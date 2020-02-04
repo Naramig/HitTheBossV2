@@ -75,8 +75,7 @@ public class Enemy : MonoBehaviour
             attacked = true;
             canUpdate = true;
             TimerForAttackBar = maxTimerForAttakBar;
-            //GetComponent<Jump>().StopJumpForward();
-            //animator.Play("JumpBack");
+
 
 
         }
@@ -195,12 +194,13 @@ public class Enemy : MonoBehaviour
         {
             AttackBarUpdate();
         }
-        
+        /*
         else if (canAttack)
         {
 
             HitAnimation();
         }
+        */
         
 
        // Debug.Log("attacked " + attacked);

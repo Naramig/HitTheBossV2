@@ -33,12 +33,14 @@ public class Jump : MonoBehaviour
         Debug.Log("startFRWRD");
         transform.position = endPos;
         canMoveForward = true;
+        //enemy.attacked = false;
     }
     public void StopJumpForward()
     {
         Debug.Log("stopFRWRD");
         //transform.position = startPos;
         canMoveForward = false;
+        enemy.HitAnimation();
     }
 
 

@@ -13,25 +13,27 @@ public class Jump : MonoBehaviour
 
     private void Start()
     {
+        startPos = transform.position;
         enemy = GetComponent<Enemy>();
+        Debug.Log(startPos);
     }
 
     void StartJumpBack()
     {
-        startPos = transform.position;
+        //startPos = endPos;
         canMoveBack = true;
     }
     void StopJumpBack()
     {
         
         canMoveBack = false;
-        endPos = transform.position;
+        
     }
 
     void StartJumpForward()
     {
-        
-        transform.position = endPos;
+
+        //startPos = endPos;
         canMoveForward = true;
         //enemy.attacked = false;
     }
@@ -50,9 +52,21 @@ public class Jump : MonoBehaviour
         {
             transform.position += new Vector3(0, 0, 0.07f);
         }
+        else
+        {
+            endPos = transform.position;
+            //Debug.Log(endPos);
+        }
+
         if (canMoveBack)
         {
             transform.position -= new Vector3(0, 0, 0.07f);
         }
+        else
+        {
+            endPos = transform.position;
+            //Debug.Log(endPos);
+        }
+
     }
 }

@@ -4,35 +4,49 @@ using UnityEngine;
 
 public class InteractTrigger : MonoBehaviour
 {
+    Animator animator;
     Enemy enemy;
-    PlayerController playerController;
+    PlayerController  playerController;
 
     private void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
         enemy = FindObjectOfType<Enemy>();
+        animator = enemy.GetComponent<Animator>();
     }
-
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Goblin")
         {
+            animator.SetTrigger("CalmDown");
             Debug.Log("interact");
             //playerController.canMoveForward = false;
             enemy.isTriggered = true;
             playerController.canAttack = true;
+
+        }
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Goblin")
+        {
+            enemy.isTriggered = true;
+            playerController.canAttack = true;
             if (!enemy.canUpdate)
             {
-                enemy.HitAnimation();
+                //Debug.Log("attackMTHFCKA");
+                //enemy.HitAnimation();
+                animator.SetTrigger("Attack");
+                
             }
-            else
+            else if (enemy.canUpdate)
             {
-                enemy.GetComponent<Animator>().SetTrigger("JumpBack");
+                animator.SetTrigger("JumpBack");
             }
-        }
 
+        }
     }
 
 

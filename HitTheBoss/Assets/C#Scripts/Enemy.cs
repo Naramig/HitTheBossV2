@@ -56,8 +56,8 @@ public class Enemy : MonoBehaviour
         counterAttacked = true;
         Destroy(NewSphere);
         canUpdate = true;
-        canAttack = true;
-        attacked = true;
+        //canAttack = true;
+        //attacked = true;
     }
 
 
@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
             hPBar.UpdateBar(currHP, maxHp);
             isDead();
 
-            attacked = true;
+            //attacked = true;
             canUpdate = true;
             TimerForAttackBar = maxTimerForAttakBar;
 
@@ -85,7 +85,7 @@ public class Enemy : MonoBehaviour
 
     public void HitAnimation()
     {
-
+        
         animator.SetFloat("AttackRange", Random.Range(0, 4));
         rnd = (int)Mathf.Round(animator.GetFloat("AttackRange"));
 
@@ -98,11 +98,12 @@ public class Enemy : MonoBehaviour
 
         NewSphere = Instantiate(sphere, temp.transform.position, Quaternion.identity);
         NewSphere.transform.SetParent(temp.transform);
-        //animator.Play("JumpForward");
+        
+        
         Destroy(NewSphere, animator.GetCurrentAnimatorClipInfo(0).Length + animator.GetNextAnimatorClipInfo(0).Length);
         counterAttacked = false;
-        canAttack = false;
-        attacked = false;
+        //canAttack = false;
+        //attacked = false;
     }
 
 
@@ -118,8 +119,8 @@ public class Enemy : MonoBehaviour
         }
         canUpdate = true;
         Destroy(NewSphere);
-        canAttack = true;
-        attacked = true;
+        //canAttack = true;
+        //attacked = true;
         TimerForAttackBar = maxTimerForAttakBar;
     }
 
@@ -152,9 +153,9 @@ public class Enemy : MonoBehaviour
         TimerForAttackBar -= Time.deltaTime;
         
         attackBar.UpdateBar(TimerForAttackBar, maxTimerForAttakBar);
-        if (TimerForAttackBar <= 0 && isTriggered)
+        if (TimerForAttackBar <= 0)
         {
-            canAttack = true;
+            //canAttack = true;
             canUpdate = false;
             //animator.SetTrigger("JumpForward");
         }

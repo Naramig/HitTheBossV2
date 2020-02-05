@@ -5,11 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-
-
-
     public Camera mainCamera;
     public Vector3 mousePos;
+    Enemy enemy;
     Spear spear;
     RaycastHit hit;
     float canTapTimer = 0.5f;
@@ -23,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        enemy = FindObjectOfType<Enemy>();
         spear = GetComponentInChildren<Spear>();
     }
 
@@ -88,45 +87,19 @@ public class PlayerController : MonoBehaviour
                 currentSwipe.Normalize();
 
                 //swipe upwards
-                if (currentSwipe.y > 0.55f )
+                if (currentSwipe.y > 0.7f )
                 {
                     UpSwipe();
                     Debug.Log("up swipe");
                 }
                 //swipe down
-                if (currentSwipe.y < -0.55f )
+                if (currentSwipe.y < -0.7f )
                 {
                     DownSwipe();
                     Debug.Log("down swipe");
                 }
 
-                if (Mathf.Abs(currentSwipe.y) == 0f && canAttack)
-                {
-                    Vector3 mouse = Input.mousePosition;
-                    Ray ray = mainCamera.ScreenPointToRay(mouse);
-
-                    if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("pickable")))
-                    {
-                        canTap = false;
-                        mousePos = hit.point;
-                        spear.speared = true;
-                        if (hit.collider.gameObject.CompareTag("armor") && !FindObjectOfType<Enemy>().attacked)
-                        {
-
-                            hit.collider.gameObject.GetComponent<Armor>().DMG();
-                        }
-                        else if (hit.collider.gameObject.CompareTag("Enemy") && !FindObjectOfType<Enemy>().attacked)
-                        {
-                            hit.collider.gameObject.GetComponent<EnemyPart>().DMG();
-
-                        }
-                        else if (hit.collider.gameObject.CompareTag("CounterAttackTrigger"))
-                        {
-                            hit.collider.gameObject.GetComponentInParent<Enemy>().CounterAttack();
-
-                        }
-                    }
-                }
+                Attack();
 
             }
 
@@ -148,19 +121,56 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void Attack()
+    {
+        if (Mathf.Abs(currentSwipe.y) <= 0.6f && canAttack)
+        {
+            Vector3 mouse = Input.mousePosition;
+            Ray ray = mainCamera.ScreenPointToRay(mouse);
+
+            if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("pickable")))
+            {
+                //Debug.Log("hitMTHFCKA");
+                canTap = false;
+                mousePos = hit.point;
+                spear.speared = true;
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.magenta, 10);
+                Debug.Log("hitMTHFCKA");
+                if (hit.collider.gameObject.CompareTag("armor"))
+                {
+                    Debug.Log("hit");
+                    hit.collider.gameObject.GetComponent<Armor>().DMG();
+                }
+                else if (hit.collider.gameObject.CompareTag("Enemy"))
+                {
+                    Debug.Log("hit");
+                    hit.collider.gameObject.GetComponent<EnemyPart>().DMG();
+
+                }
+                else if (hit.collider.gameObject.CompareTag("CounterAttackTrigger"))
+                {
+                    Debug.Log("hit");
+                    hit.collider.gameObject.GetComponentInParent<Enemy>().CounterAttack();
+
+                }
+            }
+        }
+    }
     
 
     void UpSwipe()
     {
-
-            transform.position -= new Vector3(0, 0, 5);
-        
+        transform.position -= new Vector3(0, 0, 2.1f);
+        if (enemy.canUpdate)
+        {
+            enemy.GetComponent<Animator>().Play("JumpBack");
+        }
     }
 
     void DownSwipe()
     {
 
-        transform.position += new Vector3(0, 0, 5);
+        transform.position += new Vector3(0, 0, 2.1f);
 
     }
 

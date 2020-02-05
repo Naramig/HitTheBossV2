@@ -7,7 +7,7 @@ public class NumberSpawner : MonoBehaviour
     TextMesh text;
     public GameObject floatingText;
 
-    PlayerController playerController;
+    PlayerController  playerController;
 
     void Start()
     {

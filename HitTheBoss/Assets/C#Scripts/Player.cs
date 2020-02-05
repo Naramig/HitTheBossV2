@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     
     MiniMapClicker miniMapClicker;
     RaycastHit hit;
-    PlayerController playerController;
+    PlayerController  playerController;
    
 
     float canTapTimer = 0.5f;

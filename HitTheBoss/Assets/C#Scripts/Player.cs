@@ -17,12 +17,12 @@ public class Player : MonoBehaviour
     public SimpleHealthBar healthBar;
     public Text gameOverText;
     public GameObject map;
-    //public GameObject enemy;
+    
 
 
     AIPath aIPath;
     Spear spear;
-    //Shield shield;
+    
     
     MiniMapClicker miniMapClicker;
     RaycastHit hit;
@@ -61,8 +61,6 @@ public class Player : MonoBehaviour
                 gameOverText.gameObject.SetActive(true);
             }
         }
-
-
     }
     public bool Dodge()
     {

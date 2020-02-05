@@ -926,6 +926,11 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 8783441244567126215}
+    - target: {fileID: 4679960387065391057, guid: 43b5fad491a9edd4c99edcb98df5f45c,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1329902423}
     - target: {fileID: 4736072428284321942, guid: 43b5fad491a9edd4c99edcb98df5f45c,
         type: 3}
       propertyPath: m_Radius
@@ -1000,6 +1005,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622650901434971907, guid: 43b5fad491a9edd4c99edcb98df5f45c,
+        type: 3}
+      propertyPath: m_Name
+      value: Hand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43b5fad491a9edd4c99edcb98df5f45c, type: 3}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IWeapon 
+public interface IEnemyBodyPart 
 {
-    void Use();
+    void GetDMG();
 }

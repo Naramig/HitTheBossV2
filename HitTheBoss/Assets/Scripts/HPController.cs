@@ -30,7 +30,7 @@ public class HPController : MonoBehaviour
 
     private void Update()
     {
-        if (CurrentHP < healthBar.targetFill)
+        if (CurrentHP < )
         {
             CurrentHP -= Time.fixedDeltaTime;
             healthBar.UpdateBar(CurrentHP, maxHP);

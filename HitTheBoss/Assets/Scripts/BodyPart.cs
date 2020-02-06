@@ -16,8 +16,8 @@ public class BodyPart : MonoBehaviour, IBodyPart
         float dmg = Mathf.Clamp(Mathf.CeilToInt(staminaController.CurrentStamina* 3) - dmgMod, 0, 10);
         //newAudio.clip = ;
         //newAudio.Play();
-        floatingText.Spawn(dmg);
+        //floatingText.Spawn(dmg);
         GetComponent<HPController>().CurrentHP -= dmg;
-
+        Debug.Log(GetComponent<HPController>().CurrentHP);
     }
 }

@@ -9,13 +9,15 @@ public class ViewArea : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && GetComponent<StaminaController>().CurrentStamina != 0)
+        
+        if (other.tag == "Player" && GetComponentInParent<StaminaController>().CurrentStamina != 0)
         {
+            
             animator.SetTrigger("Attack");
         }
     }

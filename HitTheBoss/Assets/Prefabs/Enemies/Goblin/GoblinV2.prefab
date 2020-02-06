@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3238741897778229257}
   - component: {fileID: 430336718503280174}
   - component: {fileID: 3678631927769617200}
-  - component: {fileID: 5842375599044462986}
+  - component: {fileID: 8519778039099259871}
   m_Layer: 8
   m_Name: LeftArmArmor2
   m_TagString: armor
@@ -111,7 +111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5842375599044462986
+--- !u!114 &8519778039099259871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,13 +120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5085314555825572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &365859844346547432
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +135,7 @@ GameObject:
   - component: {fileID: 1794142380854422319}
   - component: {fileID: 8672338751246624789}
   - component: {fileID: 9032463959570662210}
-  - component: {fileID: 5819317706674934494}
+  - component: {fileID: 2543753372074160011}
   m_Layer: 8
   m_Name: Object029
   m_TagString: Enemy
@@ -229,7 +226,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 3837be4ad3c874d77931de98f3fd45c6, type: 2}
---- !u!114 &5819317706674934494
+--- !u!114 &2543753372074160011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,11 +235,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 365859844346547432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &567239354063716250
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +486,7 @@ GameObject:
   - component: {fileID: 1970589871372709775}
   - component: {fileID: 544843872198817952}
   - component: {fileID: 6864128238675530692}
-  - component: {fileID: 7485255335274371809}
+  - component: {fileID: 6673858310546932039}
   m_Layer: 8
   m_Name: Object027
   m_TagString: Enemy
@@ -583,7 +578,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 68e0b16e69d224de68454b9c6ebc7540, type: 2}
---- !u!114 &7485255335274371809
+--- !u!114 &6673858310546932039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -592,11 +587,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1390110341453162754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &1398406716360726937
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +601,7 @@ GameObject:
   - component: {fileID: 4945568275589807455}
   - component: {fileID: 1839574816148546202}
   - component: {fileID: 4318011486722082726}
-  - component: {fileID: 6933559119731640205}
+  - component: {fileID: 3526760571893860285}
   m_Layer: 8
   m_Name: Object026
   m_TagString: Enemy
@@ -700,7 +693,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a54232c195f064724a38c1504be34d31, type: 2}
---- !u!114 &6933559119731640205
+--- !u!114 &3526760571893860285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -709,11 +702,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1398406716360726937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &1438560705050515625
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +925,7 @@ GameObject:
   - component: {fileID: 4385836380177028788}
   - component: {fileID: 1483714083272590466}
   - component: {fileID: 294557041746742404}
-  - component: {fileID: 6382733859669071553}
+  - component: {fileID: 710005663274204326}
   m_Layer: 8
   m_Name: Object023
   m_TagString: Enemy
@@ -1025,7 +1016,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 35534047e499d466592012a7a8968b66, type: 2}
---- !u!114 &6382733859669071553
+--- !u!114 &710005663274204326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1034,11 +1025,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2621976039507146163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &2791351539335680104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1041,7 @@ GameObject:
   - component: {fileID: 4716427773394555077}
   - component: {fileID: 3406269520723325740}
   - component: {fileID: 227803868060936542}
-  - component: {fileID: 1795932147711359005}
+  - component: {fileID: 6257798755746855731}
   m_Layer: 8
   m_Name: RightArmArmor1
   m_TagString: armor
@@ -1150,7 +1139,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1795932147711359005
+--- !u!114 &6257798755746855731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1159,13 +1148,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2791351539335680104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &3008307114677159142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1196,7 @@ GameObject:
   - component: {fileID: 3060080709208551360}
   - component: {fileID: 499136479396692600}
   - component: {fileID: 6965370096668294042}
-  - component: {fileID: 4104243956440109079}
+  - component: {fileID: 537689298118222627}
   m_Layer: 8
   m_Name: LeftArmArmor1
   m_TagString: armor
@@ -1308,7 +1294,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4104243956440109079
+--- !u!114 &537689298118222627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1317,13 +1303,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3131931567483935759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &3195381884606737636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1380,7 @@ GameObject:
   - component: {fileID: 7744721128808119316}
   - component: {fileID: 9184209815319841048}
   - component: {fileID: 1306007654341278721}
-  - component: {fileID: 5633391252784129433}
+  - component: {fileID: 4337501539123625233}
   m_Layer: 8
   m_Name: Object022
   m_TagString: Enemy
@@ -1490,7 +1473,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: e259ea1823505453cbd46525dcad2099, type: 2}
---- !u!114 &5633391252784129433
+--- !u!114 &4337501539123625233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1499,11 +1482,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3362043585071765322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &3565463820183512397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1498,7 @@ GameObject:
   - component: {fileID: 1526792657489778678}
   - component: {fileID: 8706937757835005933}
   - component: {fileID: 4098574798863581724}
-  - component: {fileID: 3827780826948505622}
+  - component: {fileID: 429198814414565133}
   m_Layer: 8
   m_Name: Sword
   m_TagString: armor
@@ -1615,7 +1596,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3827780826948505622
+--- !u!114 &429198814414565133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1624,13 +1605,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3565463820183512397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 37c98a6584a654ee693061e567b40c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
 --- !u!1 &3573965777827995212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,7 +1685,7 @@ GameObject:
   - component: {fileID: 6696696056869859030}
   - component: {fileID: 8419673290286204521}
   - component: {fileID: 1654749586714632188}
-  - component: {fileID: 3443255189917667697}
+  - component: {fileID: 1176342510226842723}
   m_Layer: 8
   m_Name: BreastPlateBack
   m_TagString: armor
@@ -1806,7 +1783,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3443255189917667697
+--- !u!114 &1176342510226842723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1815,13 +1792,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3725373299508241518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &4238098098725153223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,8 +1839,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8563717076018950257}
   - component: {fileID: 1752582567763827979}
-  - component: {fileID: 648812165911685358}
-  - component: {fileID: 8783441244567126219}
+  - component: {fileID: 8783441244567126221}
+  - component: {fileID: 8783441244567126218}
+  - component: {fileID: 8783441244567126217}
+  - component: {fileID: 8783441244567126216}
   m_Layer: 8
   m_Name: GoblinV2
   m_TagString: Goblin
@@ -1910,7 +1886,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &648812165911685358
+--- !u!65 &8783441244567126221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648619258494354018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16648953, y: 0.38109794, z: 0.2565703}
+  m_Center: {x: 0.0055252793, y: 0.19965997, z: 0.026713956}
+--- !u!114 &8783441244567126218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1919,26 +1908,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4648619258494354018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bda02d3cd7acfe44595bbdfe17a0d412, type: 3}
+  m_Script: {fileID: 11500000, guid: 105e04742c8ec458e924bb37e612f701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightHand: {fileID: 1040711250144798936}
-  leftFoot: {fileID: 6061757114286898472}
-  leftHand: {fileID: 3195381884606737636}
-  sphere: {fileID: 5455672650650008495, guid: 2f72e2fab92bab548ab7e28c31ffef48, type: 3}
-  currHP: 20
-  maxHp: 20
-  hPBar: {fileID: 8134633957754793983}
-  attackBar: {fileID: 8134633957938895521}
-  canAttack: 1
-  attacked: 1
-  audioClip:
-  - {fileID: 8300000, guid: dcd008f94da6d479195aabe3f85d5d92, type: 3}
-  - {fileID: 8300000, guid: e3c30692e1bfa467d9a68ee40c8c88f0, type: 3}
-  - {fileID: 8300000, guid: 8a5d08c1a43044ac395eb85076006f55, type: 3}
-  canUpdate: 1
-  isTriggered: 0
---- !u!114 &8783441244567126219
+--- !u!114 &8783441244567126217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1947,9 +1920,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 4648619258494354018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f567dca2591df40268996ce5dae7658d, type: 3}
+  m_Script: {fileID: 11500000, guid: b444ae039cc3040efb4a21640200ffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 8134633957754793983}
+  maxHP: 20
+  CurrentHP: 20
+--- !u!114 &8783441244567126216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648619258494354018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073c3cfc8b7fb454baa70c2be2bd40fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaBar: {fileID: 8134633957938895521}
+  maxStamina: 5
 --- !u!1 &4664181452815054343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,6 +2036,18 @@ Transform:
   m_Father: {fileID: 7619252073000983830}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7657635779261301243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352482829851622054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5400662215147923959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,6 +2079,19 @@ Transform:
   m_Father: {fileID: 6904136193160887190}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3012938039926129628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5572457763031876264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHP: 10
 --- !u!1 &5794607213436165660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,7 +2105,7 @@ GameObject:
   - component: {fileID: 7630455888783828858}
   - component: {fileID: 2512723753002526669}
   - component: {fileID: 7688000766379695791}
-  - component: {fileID: 3697134289974375113}
+  - component: {fileID: 725814796593580900}
   m_Layer: 8
   m_Name: BreastPlateForward
   m_TagString: armor
@@ -2188,7 +2203,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3697134289974375113
+--- !u!114 &725814796593580900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2197,13 +2212,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5794607213436165660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &5843619859061913801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,7 +2227,7 @@ GameObject:
   - component: {fileID: 7938076469496443785}
   - component: {fileID: 6535839224875487884}
   - component: {fileID: 2587186968424838422}
-  - component: {fileID: 3316960590196956290}
+  - component: {fileID: 6610883104041540527}
   m_Layer: 8
   m_Name: Object030
   m_TagString: Enemy
@@ -2307,7 +2319,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 18973c3af80014f2183ed6088c6bb63b, type: 2}
---- !u!114 &3316960590196956290
+--- !u!114 &6610883104041540527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2316,11 +2328,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5843619859061913801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &5972607916381719796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,7 +2405,7 @@ GameObject:
   - component: {fileID: 8626930205969343275}
   - component: {fileID: 6296856918085968845}
   - component: {fileID: 1643224079123971968}
-  - component: {fileID: 1274046492559290538}
+  - component: {fileID: 462367240093416317}
   m_Layer: 8
   m_Name: Object010
   m_TagString: Enemy
@@ -2492,7 +2502,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a3370cf6053814c36bfa04ba83630e27, type: 2}
---- !u!114 &1274046492559290538
+--- !u!114 &462367240093416317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2501,11 +2511,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6161621806092787825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: f0f4019499fe82d4d998516c81acb1f2, type: 3}
-  animationName: BodyHit
 --- !u!1 &6166587521156039964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,7 +2527,7 @@ GameObject:
   - component: {fileID: 270115400610104459}
   - component: {fileID: 4075414976653816578}
   - component: {fileID: 6364611538577626514}
-  - component: {fileID: 7590514089480515158}
+  - component: {fileID: 8525607197828985125}
   m_Layer: 8
   m_Name: RightLegArmor
   m_TagString: armor
@@ -2617,7 +2625,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7590514089480515158
+--- !u!114 &8525607197828985125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2626,13 +2634,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6166587521156039964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &6474988531088617674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2644,7 +2649,7 @@ GameObject:
   - component: {fileID: 6146206080585261983}
   - component: {fileID: 816577371274383530}
   - component: {fileID: 6166622894408053933}
-  - component: {fileID: 1512083533727174273}
+  - component: {fileID: 1900228764199487114}
   m_Layer: 8
   m_Name: Object025
   m_TagString: Enemy
@@ -2737,7 +2742,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: b947a657a3f9e4664af5eeff1848497c, type: 2}
---- !u!114 &1512083533727174273
+--- !u!114 &1900228764199487114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2746,11 +2751,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6474988531088617674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &6742622359598049821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,7 +2765,7 @@ GameObject:
   - component: {fileID: 5197144072035000551}
   - component: {fileID: 7567112768235263862}
   - component: {fileID: 7616900978958522441}
-  - component: {fileID: 6862673770100508449}
+  - component: {fileID: 5085910871420070371}
   m_Layer: 8
   m_Name: Object031
   m_TagString: Enemy
@@ -2854,7 +2857,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 84382bdedb02d4707b9d1d5a25b112d8, type: 2}
---- !u!114 &6862673770100508449
+--- !u!114 &5085910871420070371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2863,11 +2866,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6742622359598049821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &6759640853002286051
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,7 +2912,7 @@ GameObject:
   - component: {fileID: 2644635273100830733}
   - component: {fileID: 7028509148730209114}
   - component: {fileID: 3717083649093095794}
-  - component: {fileID: 2406151927411988633}
+  - component: {fileID: 6097742270902826568}
   m_Layer: 8
   m_Name: Shield
   m_TagString: armor
@@ -3009,7 +3010,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2406151927411988633
+--- !u!114 &6097742270902826568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3018,13 +3019,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6836991824297993850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &7062260168150085118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3034,6 @@ GameObject:
   - component: {fileID: 4967789529447737632}
   - component: {fileID: 2353728278643189103}
   - component: {fileID: 218639737429819179}
-  - component: {fileID: 7347846702227357804}
   m_Layer: 8
   m_Name: Object028
   m_TagString: Enemy
@@ -3128,20 +3125,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 28bc168da45804a91bef89416522f530, type: 2}
---- !u!114 &7347846702227357804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7062260168150085118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &7091392978657493476
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,7 +3198,7 @@ GameObject:
   - component: {fileID: 1641782375931475264}
   - component: {fileID: 1716672757077362293}
   - component: {fileID: 2011364260354324773}
-  - component: {fileID: 5880420431416537616}
+  - component: {fileID: 5632567109309100731}
   m_Layer: 8
   m_Name: Object032
   m_TagString: Enemy
@@ -3308,7 +3291,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 3db55972fd93f406e92fcb09b20708d1, type: 2}
---- !u!114 &5880420431416537616
+--- !u!114 &5632567109309100731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3317,11 +3300,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7484211954660137598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 00fb689389ccd204a990fd662e344897, type: 3}
-  animationName: BodyHit
 --- !u!1 &7675496869459720145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3316,7 @@ GameObject:
   - component: {fileID: 8330962009223138426}
   - component: {fileID: 7715187282800633917}
   - component: {fileID: 92782599618213225}
-  - component: {fileID: 8137329626844262365}
+  - component: {fileID: 1917055383567059257}
   m_Layer: 8
   m_Name: RightArmArmor2
   m_TagString: armor
@@ -3433,7 +3414,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8137329626844262365
+--- !u!114 &1917055383567059257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3442,13 +3423,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7675496869459720145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &7792163004798423237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,7 +3472,7 @@ GameObject:
   - component: {fileID: 7973738825367547358}
   - component: {fileID: 3628404713962094548}
   - component: {fileID: 8535858239988097572}
-  - component: {fileID: 8199946641326703602}
+  - component: {fileID: 2315466446055093677}
   m_Layer: 8
   m_Name: LeftLegArmor
   m_TagString: armor
@@ -3592,7 +3570,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8199946641326703602
+--- !u!114 &2315466446055093677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3601,13 +3579,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7885689526760805273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae230db899064f209e000aec6195b16, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab441bf7a6348f9835504fe4f37dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 10
-  maxHp: 10
-  dmgMod: 1
-  armor: {fileID: 8300000, guid: 9ead2eab2cc6e3943a6cd924fcfe4472, type: 3}
+  CurrentHP: 10
 --- !u!1 &7902507671278110413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,7 +3689,7 @@ GameObject:
   - component: {fileID: 3958095193753772800}
   - component: {fileID: 8210789055190605459}
   - component: {fileID: 2780726324875482023}
-  - component: {fileID: 879518562512459458}
+  - component: {fileID: 526511665077472146}
   m_Layer: 8
   m_Name: Object024
   m_TagString: Enemy
@@ -3806,7 +3781,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 0ccfb7bfa5b294137bc00079a53574c4, type: 2}
---- !u!114 &879518562512459458
+--- !u!114 &526511665077472146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3815,11 +3790,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8114103799231436164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa226c959456a934eb20850c533c3561, type: 3}
+  m_Script: {fileID: 11500000, guid: bcc1e730a959e4a279bbadbc5d6e77dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitAudio: {fileID: 8300000, guid: 464c57200fbdf204089d11c2f0145867, type: 3}
-  animationName: 
 --- !u!1 &8134633956960081969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4016,6 +3989,7 @@ MonoBehaviour:
   displayText: 0
   barText: {fileID: 0}
   additionalText: 
+  targetFill: 0
 --- !u!1 &8134633957938895523
 GameObject:
   m_ObjectHideFlags: 0
@@ -4137,6 +4111,7 @@ MonoBehaviour:
   displayText: 0
   barText: {fileID: 0}
   additionalText: 
+  targetFill: 0
 --- !u!1 &8134633958322524096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,6 +4211,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7030788402727263197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8271685569746747202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6593e9a523b4c968de10541b2cc688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8335303545982260317
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,16 +4354,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7753055723413543800, guid: c6748f9bc559548d4ac7c963112f9c21,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 9c250969e722f46259e374ca1d3fcc64, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6748f9bc559548d4ac7c963112f9c21, type: 3}
+--- !u!1 &5352482829851622054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 236002121246288367, guid: c6748f9bc559548d4ac7c963112f9c21,
+    type: 3}
+  m_PrefabInstance: {fileID: 5260666621909881673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8943180321281018037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3827263040458939388, guid: c6748f9bc559548d4ac7c963112f9c21,
+    type: 3}
+  m_PrefabInstance: {fileID: 5260666621909881673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5572457763031876264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 312152055832859105, guid: c6748f9bc559548d4ac7c963112f9c21,
+    type: 3}
+  m_PrefabInstance: {fileID: 5260666621909881673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8271685569746747202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4308619214333930507, guid: c6748f9bc559548d4ac7c963112f9c21,
     type: 3}
   m_PrefabInstance: {fileID: 5260666621909881673}
   m_PrefabAsset: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StaminaController : MonoBehaviour
 {
-    SimpleHealthBar staminaBar;
+    public SimpleHealthBar staminaBar;
     public float maxStamina;
     public float CurrentStamina { get; private set; }
 

@@ -2,26 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBodyPart : MonoBehaviour, IEnemyBodyPart
+public class BodyPart : MonoBehaviour, IBodyPart
 {
-
     float dmgMod;
-    public GameObject player;
-    StaminaController playersStamina;
     NumberSpawner floatingText;
-
 
     private void Start()
     {
-        
         floatingText = GetComponent<NumberSpawner>();
-        playersStamina = player.GetComponent<StaminaController>();
-        
     }
-    public void GetDMG()
+    public void GetDMG(StaminaController staminaController)
     {
-        float dmg = Mathf.Clamp(Mathf.CeilToInt(playersStamina.CurrentStamina* 3) - dmgMod, 0, 10);
-
+        float dmg = Mathf.Clamp(Mathf.CeilToInt(staminaController.CurrentStamina* 3) - dmgMod, 0, 10);
         //newAudio.clip = ;
         //newAudio.Play();
         floatingText.Spawn(dmg);

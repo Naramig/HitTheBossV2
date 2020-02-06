@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class HPController : MonoBehaviour
 {
-    SimpleHealthBar healthBar;
+    public SimpleHealthBar healthBar;
     public float maxHP;
     public float CurrentHP;
     float dmg;
 
-    public void HPUpdate()
-    {
-        if (CurrentHP > CurrentHP - dmg)
-        {
-            CurrentHP -= Time.fixedDeltaTime;
-            healthBar.UpdateBar(CurrentHP, maxHP);
-        }
+  
 
-    }
 
     public bool isDead()
     {
@@ -37,7 +30,13 @@ public class HPController : MonoBehaviour
 
     private void Update()
     {
-        HPUpdate();
+        if (CurrentHP < healthBar.targetFill)
+        {
+            CurrentHP -= Time.fixedDeltaTime;
+            healthBar.UpdateBar(CurrentHP, maxHP);
+            
+        }
+
     }
 
 }

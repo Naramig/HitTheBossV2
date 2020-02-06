@@ -26,7 +26,6 @@ public class Armor : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerController = FindObjectOfType<Player>();
         floatingText = FindObjectOfType<NumberSpawner>();
-        
     }
 
 

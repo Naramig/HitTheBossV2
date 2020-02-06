@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Armour : MonoBehaviour, IEnemyBodyPart
+public class Armour : MonoBehaviour, IBodyPart
 {
-    float CurrentHP;
+    public float CurrentHP;
     //float maxHP;
-    float dmgMod;
-    public GameObject player;
-    StaminaController playersStamina;
+    float dmgMod = 1;
+    
     NumberSpawner floatingText;
     Rigidbody rigidbody;
 
@@ -16,19 +15,17 @@ public class Armour : MonoBehaviour, IEnemyBodyPart
     {
         rigidbody = GetComponent<Rigidbody>();
         floatingText = GetComponent<NumberSpawner>();
-        playersStamina = player.GetComponent<StaminaController>();
-
     }
-    public void GetDMG()
+    public void GetDMG(StaminaController staminaController)
     {
-        float dmg = Mathf.Clamp(Mathf.CeilToInt(playersStamina.CurrentStamina * 3) - dmgMod, 0, 10);
+        float dmg = Mathf.Clamp(Mathf.CeilToInt(staminaController.CurrentStamina * 3) - dmgMod, 0, 10);
 
         //newAudio.clip = armor;
         //newAudio.Play();
         floatingText.Spawn(dmg);
 
             CurrentHP -= dmg;
-            if ((CurrentHP <= 0 || playersStamina.CurrentStamina == playersStamina.maxStamina))
+            if ((CurrentHP <= 0 || staminaController.CurrentStamina == staminaController.maxStamina))
             {
                 rigidbody.isKinematic = false;
                 transform.SetParent(null);
@@ -40,12 +37,6 @@ public class Armour : MonoBehaviour, IEnemyBodyPart
 
             }
         }
-
-
-
-
-
-    
 }
 
 

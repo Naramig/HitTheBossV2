@@ -66,7 +66,7 @@ public class PlayerControll : MonoBehaviour
 
                 else
                 {
-                    handController.UseItem();
+                    //handController.UseItem();
                     Debug.Log("Tap");
                 }
             }

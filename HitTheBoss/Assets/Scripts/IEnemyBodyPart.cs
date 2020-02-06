@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IEnemyBodyPart 
+public interface IBodyPart 
 {
-    void GetDMG();
+    void GetDMG(StaminaController staminaController);
 }

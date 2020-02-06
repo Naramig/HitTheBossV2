@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     Animator animator;
+
     float currentHP;
 
     private void Start()
@@ -14,31 +15,22 @@ public class EnemyManager : MonoBehaviour
     }
 
 
-    bool JumpBack()
+    void JumpBack()
     {
-        
-    }
-    bool JumpForward()
-    {
-
-    }
-
-
-    void Move()
-    {
-        if (JumpBack())
+        animator.SetTrigger("JumpBack");
+        for (;transform.position!= new Vector3(0, 0, 2f); )
         {
-            transform.position += new Vector3(0, 0, 0.07f);
-        }
-        if (JumpForward())
-        {
-            transform.position -= new Vector3(0, 0, 0.07f);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(0, 0, 2f), 0.2f);
         }
     }
 
-    private void Update()
+    void JumpForward()
     {
-        Move();
+        animator.SetTrigger("JumpForward");
+        for (; transform.position != new Vector3(0, 0, 2f);)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(0, 0, -2f), 0.2f);
+        }
     }
 
 }

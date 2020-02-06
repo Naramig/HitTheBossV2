@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IWeapon 
 {
-    void Use();
+    void DoDamage(Collider other);
 }

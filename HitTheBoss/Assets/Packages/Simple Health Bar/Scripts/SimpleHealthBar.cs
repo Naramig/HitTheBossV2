@@ -51,7 +51,7 @@ public class SimpleHealthBar : MonoBehaviour
 	/// <summary>
 	/// This float stores the target amount of fill. This value is current with Fill Constraints.
 	/// </summary>
-	float targetFill = 0.0f;
+	public float targetFill = 0.0f;
 
 
 	/// <summary>

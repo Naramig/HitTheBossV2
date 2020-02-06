@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class EnemyBodyPart : MonoBehaviour, IEnemyBodyPart
 {
-    float CurrentHP;
-    //float maxHP;
+
     float dmgMod;
     public GameObject player;
     StaminaController playersStamina;
     NumberSpawner floatingText;
-    Rigidbody rigidbody;
+
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        
         floatingText = GetComponent<NumberSpawner>();
         playersStamina = player.GetComponent<StaminaController>();
         
@@ -23,32 +22,10 @@ public class EnemyBodyPart : MonoBehaviour, IEnemyBodyPart
     {
         float dmg = Mathf.Clamp(Mathf.CeilToInt(playersStamina.CurrentStamina* 3) - dmgMod, 0, 10);
 
-        //newAudio.clip = armor;
+        //newAudio.clip = ;
         //newAudio.Play();
         floatingText.Spawn(dmg);
-
-        if(gameObject.tag == "Armor")
-        {
-            CurrentHP -= dmg;
-            if ((CurrentHP <= 0 || playersStamina.CurrentStamina == playersStamina.maxStamina))
-            {
-                rigidbody.isKinematic = false;
-                transform.SetParent(null);
-
-            }
-            if (CurrentHP > 0)
-            {
-                //   animator.Play("Vibration");
-
-            }
-        }
-        else
-        {
-            GetComponent<HPController>().CurrentHP -= dmg;
-        }
-
-        
-
+        GetComponent<HPController>().CurrentHP -= dmg;
 
     }
 }

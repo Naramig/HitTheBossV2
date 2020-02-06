@@ -16,11 +16,23 @@ public class HPController : MonoBehaviour
             CurrentHP -= Time.fixedDeltaTime;
             healthBar.UpdateBar(CurrentHP, maxHP);
         }
-        if (CurrentHP < 0)
-        {
-            Debug.Log("Dead");
-        }
+
     }
+
+    public bool isDead()
+    {
+
+        if (CurrentHP <= 0)
+        {
+            //animator.Play("Dying");
+            Destroy(gameObject, 3);
+
+            return true;
+        }
+        else
+            return false;
+    }
+
 
 
     private void Update()
